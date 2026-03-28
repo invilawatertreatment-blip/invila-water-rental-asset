@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Invila™ | Zero Capex Water Infrastructure</title>
   <meta name="description" content="Landing page executive untuk Invila™: Zero Capex Water Infrastructure, Water as a Service, SCADA-IoT visibility, dan strategic saving audit untuk proyek air industri." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Serif:wght@700;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
     :root {
       --ink: #10182b;
@@ -46,77 +45,38 @@
     button, input { font: inherit; }
     button { cursor: pointer; }
     .wrap { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
-    .site-header .wrap { overflow: visible; }
 
     .brand-wordmark,
     .brand-tagline,
     .brand-inline { font-family: "Noto Serif", Georgia, "Times New Roman", serif; }
 
-    .section-kicker {
-      margin: 0 0 10px;
-      font-size: 0.72rem;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--brand);
-    }
-    .section-kicker-light {
-      margin: 0 0 10px;
-      font-size: 0.72rem;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #60a5fa;
-    }
-
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 60;
+      z-index: 40;
       background: rgba(255, 255, 255, 0.72);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid transparent;
-      transition: background 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
-      overflow: visible;
+      transition: 180ms ease;
     }
     .site-header.scrolled {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.88);
       border-bottom-color: var(--line);
-      box-shadow: 0 12px 30px rgba(17, 24, 39, 0.08);
+      box-shadow: 0 10px 30px rgba(17, 24, 39, 0.05);
     }
-    .site-header.scrolled .header-row {
-      min-height: 76px;
-    }
-    .site-header.scrolled .logo-card {
-      width: 68px;
-      height: 68px;
-      border-radius: 18px;
-      transform: translateY(10px);
-    }
-    .site-header.scrolled .brand-wordmark {
-      transform: scale(0.94);
-      transform-origin: left center;
-    }
-    .site-header.scrolled .brand-tagline {
-      opacity: 0.88;
-    }
-
     .header-row {
       min-height: 96px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
-      overflow: visible;
-      padding-bottom: 14px;
+      gap: 20px;
     }
+
     .brand {
       display: flex;
       align-items: center;
       gap: 16px;
       min-width: 0;
-      flex: 0 1 auto;
-      overflow: visible;
     }
     .logo-card {
       width: 84px;
@@ -124,20 +84,11 @@
       display: grid;
       place-items: center;
       flex: 0 0 auto;
-      border-radius: 20px;
-      background: linear-gradient(135deg, rgba(42,95,255,0.10), rgba(42,95,255,0.02));
-      color: var(--brand);
-      font-weight: 900;
-      font-size: 1.2rem;
-      box-shadow: 0 10px 24px rgba(42,95,255,0.10);
-      overflow: hidden;
-      transform: translateY(18px);
     }
-    .logo-img {
+    .logo-card img {
       width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
+      height: auto;
+      filter: drop-shadow(0 10px 24px rgba(42, 95, 255, 0.18));
     }
     .brand-lockup {
       display: flex;
@@ -179,38 +130,20 @@
       margin-left: 0.18em;
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-      margin-left: auto;
-      flex: 0 0 auto;
-    }
+    .nav { display: flex; align-items: center; gap: 4px; }
     .nav a {
-      padding: 10px 12px;
+      padding: 10px 14px;
       border-radius: var(--pill);
-      font-size: 0.73rem;
+      font-size: 0.76rem;
       font-weight: 800;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
       color: #6b7588;
       transition: 180ms ease;
     }
     .nav a:hover { background: var(--brand-soft); color: var(--brand); }
 
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex: 0 0 auto;
-    }
-    .header-wa-btn {
-      min-height: 48px;
-      padding: 0 20px;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      box-shadow: 0 14px 30px rgba(42, 95, 255, 0.18);
-    }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
     .menu-toggle {
       display: none;
       width: 48px;
@@ -262,6 +195,11 @@
       border-color: var(--line);
       box-shadow: var(--shadow-soft);
     }
+    .btn-light {
+      background: #fff;
+      color: #0f1a36;
+      box-shadow: 0 18px 36px rgba(255,255,255,0.14);
+    }
 
     .mobile-nav { display: none; padding-bottom: 18px; }
     .mobile-card {
@@ -282,36 +220,7 @@
       color: #5f6c84;
     }
 
-    .mobile-wa-fab {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 70;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      min-width: 58px;
-      height: 58px;
-      padding: 0 18px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #25d366, #16a34a);
-      color: #fff;
-      box-shadow: 0 18px 35px rgba(22, 163, 74, 0.28);
-      font-size: 0.76rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .mobile-wa-fab:hover {
-      transform: translateY(-1px);
-    }
-    .mobile-wa-fab .icon {
-      font-size: 1rem;
-      margin-right: 8px;
-      line-height: 1;
-    }
-
-    .hero { padding: 72px 0 100px; }
+    .hero { padding: 40px 0 72px; }
     .hero-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(320px, 0.95fr);
@@ -378,6 +287,42 @@
       background: rgba(16,24,43,0.16);
     }
 
+    .pain-head { margin-top: 34px; margin-bottom: 10px; max-width: 760px; }
+    .pain-kicker,
+    .section-kicker,
+    .risk-kicker,
+    .blueprint-kicker,
+    .engines-kicker,
+    .audit-kicker {
+      margin: 0 0 10px;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .pain-kicker,
+    .section-kicker,
+    .blueprint-kicker,
+    .audit-kicker { color: var(--brand); }
+    .risk-kicker { color: #dc2626; }
+    .engines-kicker { color: var(--teal); }
+    .pain-title {
+      margin: 0;
+      max-width: 18ch;
+      font-size: clamp(1.45rem, 2.5vw, 2.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: #0d1426;
+    }
+    .pain-bridge {
+      margin: 14px 0 0;
+      max-width: 52rem;
+      font-size: 1rem;
+      line-height: 1.74;
+      color: var(--muted);
+      text-wrap: pretty;
+    }
+
     .hero-points {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -414,25 +359,113 @@
       overflow: hidden;
       isolation: isolate;
     }
+    .media-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(42,95,255,0.14), transparent 30%);
+      pointer-events: none;
+      z-index: -1;
+    }
+    .media-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+      padding: 2px 4px 0;
+    }
+    .media-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+    .media-label::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--brand);
+      box-shadow: 0 0 0 6px rgba(42,95,255,0.10);
+    }
     .media-window {
       position: relative;
       overflow: hidden;
       border-radius: 26px;
       border: 1px solid rgba(16,24,43,0.08);
-      background: linear-gradient(135deg, #dbeafe, #eff6ff);
+      background: #dfe7f6;
       min-height: 520px;
+      isolation: isolate;
     }
     .media-window video {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
-      min-height: 520px;
       object-fit: cover;
-      object-position: center;
+      background: #cfd9ec;
+      transform: scale(1.01);
+    }
+    .media-window::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(8,14,28,0.18) 0%, rgba(8,14,28,0.08) 28%, rgba(8,14,28,0.42) 100%),
+        radial-gradient(circle at 18% 58%, rgba(56,160,255,0.28), transparent 22%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .media-executive-overlay {
+      position: absolute;
+      left: 16px;
+      right: 34px;
+      bottom: 18px;
+      z-index: 2;
+      display: grid;
+      gap: 6px;
+      padding: 10px 14px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(9,16,32,0.03), rgba(9,16,32,0.26));
+      border: 1px solid rgba(255,255,255,0.07);
+      box-shadow: 0 8px 20px rgba(9,16,32,0.10);
+      backdrop-filter: blur(5px);
+      color: #fff;
+      max-width: 560px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity 240ms ease, transform 240ms ease, visibility 240ms ease;
+      pointer-events: none;
+    }
+    .media-executive-overlay.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .media-executive-overlay small {
       display: block;
-      background: #dbeafe;
+      font-size: 0.6rem;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.72);
+    }
+    .media-executive-overlay strong {
+      display: block;
+      max-width: 30ch;
+      font-size: clamp(0.96rem, 1.2vw, 1.12rem);
+      line-height: 1.26;
+      letter-spacing: -0.01em;
+      color: #fff;
     }
 
-    .section { padding: 0 0 100px; }
+    .section { padding: 0 0 88px; }
     .section-head {
       display: flex;
       align-items: end;
@@ -455,119 +488,203 @@
       line-height: 1.82;
     }
 
+    .value-band,
     .solution-shell,
-    .audit-shell,
-    .faq-card,
-    .visit-card,
-    .pain-item,
-    .benefit-card,
-    .capability-card,
-    .zero-capex-card,
-    .process-item {
+    .risk-shell,
+    .blueprint-shell,
+    .engines-shell {
       border-radius: 32px;
       border: 1px solid var(--line);
       box-shadow: var(--shadow-soft);
+    }
+    .value-band {
+      padding: 28px 30px;
       background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,255,255,0.82));
     }
-    .solution-shell,
-    .audit-shell { padding: 34px; }
-    .solution-grid,
-    .benefit-grid,
-    .pain-list,
-    .capability-grid,
-    .zero-capex-grid,
-    .faq-grid,
-    .process-grid {
+    .value-grid {
       display: grid;
-      gap: 18px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
     }
-    .solution-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-    .benefit-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .pain-list,
-    .capability-grid,
-    .zero-capex-grid,
-    .faq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .process-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-
-    .solution-item + .solution-item {
-      border-left: 1px solid rgba(16,24,43,0.08);
-      padding-left: 24px;
-    }
-    .solution-item small,
-    .pain-item small,
-    .benefit-card small,
-    .capability-card small,
-    .zero-capex-card small,
-    .process-item small,
-    .visit-card small {
+    .value-item small {
       display: block;
-      margin-bottom: 12px;
-      font-size: 0.72rem;
+      margin-bottom: 10px;
+      font-size: 0.7rem;
       font-weight: 900;
       letter-spacing: 0.13em;
       text-transform: uppercase;
       color: var(--brand);
     }
-    .solution-item h3,
-    .pain-item h3,
-    .benefit-card h3,
-    .capability-card h3,
-    .zero-capex-card h3,
-    .visit-card h3 {
+    .value-item p {
+      margin: 0;
+      font-size: 1.08rem;
+      line-height: 1.55;
+      color: #131d34;
+      font-weight: 650;
+    }
+
+    .risk-shell,
+    .blueprint-shell,
+    .engines-shell,
+    .audit-shell,
+    .solution-shell,
+    .cta-shell { padding: 34px; }
+    .risk-shell,
+    .blueprint-shell { background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.84)); }
+    .engines-shell { background: linear-gradient(180deg, rgba(240,253,250,0.92), rgba(255,255,255,0.84)); }
+    .risk-head,
+    .blueprint-head,
+    .engines-head,
+    .audit-head { margin-bottom: 24px; }
+    .risk-head h3,
+    .blueprint-head h3,
+    .engines-head h3,
+    .audit-head h3 {
+      margin: 0;
+      font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+      line-height: 1.06;
+      letter-spacing: -0.05em;
+      color: #0d1426;
+      text-wrap: balance;
+    }
+    .risk-head p,
+    .blueprint-head p,
+    .engines-head p {
+      margin: 12px 0 0;
+      max-width: 48rem;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.74;
+    }
+
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .risk-card {
+      display: flex;
+      align-items: center;
+      min-height: 84px;
+      padding: 18px 18px 18px 16px;
+      border-radius: 22px;
+      background: #fff;
+      border: 1px solid rgba(220,38,38,0.10);
+      border-left: 5px solid #ef4444;
+      transition: 180ms ease;
+      box-shadow: 0 10px 24px rgba(17,24,39,0.04);
+    }
+    .risk-card:hover {
+      transform: translateX(4px);
+      background: #fff7f7;
+      box-shadow: 0 14px 30px rgba(239,68,68,0.08);
+    }
+    .risk-card span {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #172033;
+      line-height: 1.45;
+      text-align: left;
+    }
+    .risk-footnote {
+      margin: 18px 0 0;
+      text-align: center;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #94a3b8;
+      font-weight: 700;
+    }
+
+    .blueprint-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .blueprint-card {
+      padding: 28px;
+      border-radius: 28px;
+      background: #fff;
+      border: 1px solid rgba(16,24,43,0.06);
+      box-shadow: 0 14px 28px rgba(17,24,39,0.05);
+      transition: 180ms ease;
+      text-align: center;
+    }
+    .blueprint-card:hover { transform: translateY(-4px); box-shadow: 0 20px 38px rgba(17,24,39,0.08); }
+    .blueprint-icon,
+    .engine-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 18px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      font-weight: 900;
+    }
+    .blueprint-icon { background: rgba(42,95,255,0.10); color: var(--brand); }
+    .blueprint-card h4,
+    .engine-card h4 {
       margin: 0 0 12px;
       font-size: 1.22rem;
       line-height: 1.22;
       letter-spacing: -0.03em;
       color: #10182b;
     }
-    .solution-item p,
-    .pain-item p,
-    .process-item p,
-    .benefit-card p,
-    .capability-card p,
-    .zero-capex-card p,
-    .faq-card p,
-    .visit-card p {
+    .blueprint-card p,
+    .engine-card p {
       margin: 0;
       color: var(--muted);
       font-size: 0.98rem;
       line-height: 1.72;
     }
 
-    .pain-item,
-    .benefit-card,
-    .capability-card,
-    .zero-capex-card,
-    .faq-card,
-    .visit-card,
-    .process-item { padding: 24px; }
-    .process-item { position: relative; overflow: hidden; }
-    .process-item::after {
-      content: "";
-      position: absolute;
-      right: 18px;
-      top: 18px;
-      width: 34px;
-      height: 34px;
-      border-radius: 999px;
-      background: rgba(42,95,255,0.08);
+    .engines-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 14px;
     }
-    .process-item strong {
+    .engine-card {
+      padding: 20px 16px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(15,118,110,0.10);
+      text-align: center;
+      transition: 180ms ease;
+      box-shadow: 0 10px 24px rgba(15,118,110,0.04);
+    }
+    .engine-card:hover {
+      transform: translateY(-3px) scale(1.02);
+      border-color: rgba(15,118,110,0.24);
+      box-shadow: 0 18px 36px rgba(15,118,110,0.10);
+    }
+    .engine-icon { background: rgba(15,118,110,0.10); color: var(--teal); margin-bottom: 14px; }
+    .engine-card strong {
       display: block;
-      margin-bottom: 10px;
-      font-size: 1rem;
-      line-height: 1.35;
-      letter-spacing: -0.02em;
-      color: #10182b;
-      position: relative;
-      z-index: 1;
+      font-size: 0.74rem;
+      line-height: 1.45;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #0f172a;
     }
 
     .audit-shell {
+      padding: 34px;
+      border-radius: 32px;
       background: linear-gradient(135deg, var(--dark-hero) 0%, #020617 100%);
       color: #fff;
       border: 1px solid rgba(255,255,255,0.06);
       box-shadow: 0 24px 60px rgba(2,6,23,0.35);
+    }
+    .audit-head h3 { color: #fff; }
+    .audit-copy {
+      margin: 12px 0 0;
+      max-width: 48rem;
+      color: rgba(255,255,255,0.72);
+      font-size: 1rem;
+      line-height: 1.74;
     }
     .audit-layout {
       display: grid;
@@ -580,7 +697,37 @@
       background: linear-gradient(145deg, rgba(15,23,42,0.72), rgba(2,6,23,0.82));
       border: 1px solid rgba(255,255,255,0.06);
       backdrop-filter: blur(20px);
-      padding: 26px;
+    }
+    .control-panel { padding: 26px; }
+    .control-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .control-badge {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: #22d3ee;
+      color: #06111f;
+      font-size: 1rem;
+      font-weight: 900;
+    }
+    .control-top span,
+    .stat-label {
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+    .control-panel .field {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 18px;
     }
     .control-panel input {
       width: 100%;
@@ -594,190 +741,128 @@
       color: #fff;
       outline: none;
     }
-    .stat-label {
-      font-size: 0.68rem;
-      font-weight: 900;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
-      display: block;
-      margin-bottom: 8px;
+    .control-panel input:focus {
+      border-color: rgba(34,211,238,0.7);
+      background: rgba(34,211,238,0.06);
     }
-    .field { margin-bottom: 18px; }
     .audit-main { display: grid; gap: 22px; }
-    .hero-saving,
-    .metric-card,
-    .strategy-panel {
-      padding: 28px;
-      border-radius: 28px;
-      border: 1px solid rgba(255,255,255,0.06);
-      background: linear-gradient(145deg, rgba(15,23,42,0.66), rgba(2,6,23,0.78));
+    .hero-saving {
+      padding: 32px;
+      border-radius: 34px;
+      background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+      border: 1px solid rgba(42,95,255,0.18);
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .hero-saving h4,
-    .metric-card strong,
-    .strategy-panel h4 {
-      margin: 10px 0 0;
-      font-size: clamp(2rem, 5vw, 4rem);
-      line-height: 0.98;
+    .hero-saving .value-label {
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #60a5fa;
+    }
+    .hero-saving h4 {
+      margin: 0;
+      font-size: clamp(2.8rem, 6vw, 7.2rem);
+      line-height: 0.95;
       letter-spacing: -0.06em;
       font-style: italic;
       color: #fff;
+      text-wrap: balance;
     }
-    .metric-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-    .strategy-panel h4 { color: #fb7185; }
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .metric-card {
+      padding: 28px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(15,23,42,0.66), rgba(2,6,23,0.78));
+      border: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .metric-card strong {
+      display: block;
+      margin-top: 8px;
+      font-size: clamp(1.5rem, 2.6vw, 3rem);
+      line-height: 1.04;
+      letter-spacing: -0.05em;
+      font-style: italic;
+      color: #fff;
+    }
+    .metric-icon {
+      font-size: 1.6rem;
+      opacity: 0.3;
+      color: rgba(255,255,255,0.7);
+    }
+    .strategy-panel {
+      padding: 34px;
+      border-radius: 34px;
+      background: linear-gradient(90deg, #1e1b4b 0%, #020617 100%);
+      border: 1px solid rgba(244,63,94,0.22);
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .strategy-panel p {
+      margin: 10px 0 0;
+      max-width: 34rem;
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      line-height: 1.72;
+      font-style: italic;
+    }
+    .strategy-panel h4 {
+      margin: 0;
+      font-size: clamp(2.6rem, 6vw, 6.8rem);
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+      font-style: italic;
+      color: #fb7185;
+      text-wrap: balance;
+    }
+    .download-wrap { display: flex; justify-content: center; padding-top: 6px; }
     .download-btn {
-      min-height: 64px;
-      padding: 0 28px;
+      position: relative;
+      min-height: 78px;
+      width: min(100%, 420px);
+      padding: 0 34px;
       border: 0;
       border-radius: 999px;
       background: linear-gradient(180deg, #ff4c73 0%, #f43f5e 100%);
       color: #fff;
       font-size: 0.86rem;
       font-weight: 900;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.42em;
       text-transform: uppercase;
-      box-shadow: 0 20px 40px rgba(244,63,94,0.30);
+      box-shadow: 0 30px 70px rgba(244,63,94,0.30), 0 0 60px rgba(244,63,94,0.18);
+      transition: 180ms ease;
+    }
+    .download-btn:hover { transform: translateY(-1px); background: linear-gradient(180deg, #ff5a7d 0%, #ef3354 100%); }
+    .download-btn:disabled {
+      opacity: 0.72;
+      cursor: wait;
+      transform: none;
     }
 
-    .visit-shell {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
-      gap: 24px;
-      align-items: stretch;
-    }
-    .visit-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
-    .faq-card details {
-      border-radius: 18px;
-      background: rgba(248,250,252,0.9);
-      border: 1px solid rgba(16,24,43,0.06);
-      padding: 18px 18px 16px;
-    }
-    .faq-card details + details { margin-top: 12px; }
-    .faq-card summary {
-      cursor: pointer;
-      list-style: none;
-      font-size: 1rem;
-      font-weight: 800;
-      line-height: 1.45;
-      color: #0f172a;
-    }
-    .faq-card summary::-webkit-details-marker { display: none; }
-    .faq-card details p { margin-top: 12px; }
-
-    footer { padding: 34px 0 44px; }
-    .foot {
-      padding-top: 20px;
-      border-top: 1px solid rgba(16,24,43,0.08);
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-      color: #667389;
-      font-size: 0.88rem;
+    .pdf-stage {
+      position: absolute;
+      left: -99999px;
+      top: 0;
+      width: 0;
+      height: 0;
+      overflow: hidden;
     }
 
-    @media (max-width: 1080px) {
-      .nav { display: none; }
-      .header-wa-btn { display: none; }
-      .menu-toggle { display: inline-block; }
-      .mobile-nav.show { display: block; }
-      .header-row {
-        min-height: 88px;
-        gap: 16px;
-      }
-      .brand {
-        flex: 1 1 auto;
-      }
-      .hero-grid,
-      .solution-grid,
-      .audit-layout,
-      .metric-grid,
-      .pain-list,
-      .capability-grid,
-      .zero-capex-grid,
-      .faq-grid,
-      .visit-shell { grid-template-columns: 1fr; }
-      .benefit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .process-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .section-head { grid-template-columns: 1fr; display: grid; }
-      .solution-item + .solution-item {
-        border-left: 0;
-        border-top: 1px solid rgba(16,24,43,0.08);
-        padding-left: 0;
-        padding-top: 22px;
-      }
-    }
-
-    @media (max-width: 780px) {
-      .wrap { width: min(calc(100% - 22px), var(--max)); }
-      .header-row {
-        min-height: 82px;
-        gap: 12px;
-        padding-bottom: 0;
-      }
-      .brand {
-        gap: 10px;
-        align-items: center;
-      }
-      .logo-card {
-        width: 58px;
-        height: 58px;
-        border-radius: 16px;
-        transform: translateY(0);
-      }
-      .brand-wordmark {
-        font-size: clamp(1.7rem, 8vw, 2.4rem);
-        white-space: normal;
-        line-height: 0.95;
-      }
-      .brand-tagline {
-        white-space: normal;
-        line-height: 1.18;
-        font-size: 0.68rem;
-        letter-spacing: 0.12em;
-      }
-      .hero { padding: 26px 0 72px; }
-      h1 {
-        max-width: 100%;
-        margin-top: 16px;
-        font-size: clamp(1.95rem, 8.8vw, 2.9rem);
-        line-height: 1.02;
-        letter-spacing: -0.05em;
-        text-wrap: pretty;
-      }
-      .hero-points,
-      .process-grid,
-      .benefit-grid,
-      .pain-list,
-      .capability-grid,
-      .zero-capex-grid,
-      .faq-grid { grid-template-columns: 1fr; gap: 14px; }
-      .media-card,
-      .solution-shell,
-      .audit-shell,
-      .faq-card,
-      .visit-card,
-      .pain-item,
-      .process-item,
-      .benefit-card,
-      .capability-card,
-      .zero-capex-card,
-      .glass-panel,
-      .hero-saving,
-      .metric-card,
-      .strategy-panel { padding: 18px; border-radius: 22px; }
-      .media-window { min-height: 260px; aspect-ratio: 4 / 5; }
-      .media-window video { min-height: 260px; }
-      .btn { width: 100%; min-height: 52px; padding: 0 18px; font-size: 0.73rem; }
-      .hero-actions,
-      .visit-actions { display: grid; grid-template-columns: 1fr; }
-      .section { padding: 0 0 72px; }
-      .section-title { font-size: clamp(1.45rem, 7vw, 2rem); max-width: 100%; }
-      .control-panel input { font-size: 1.5rem; padding: 16px 18px; }
-      .download-btn { width: 100%; min-height: 56px; padding: 0 18px; letter-spacing: 0.14em; font-size: 0.68rem; }
-      .foot { font-size: 0.8rem; gap: 10px; }
-      .mobile-wa-fab { display: inline-flex; }
-    }
+    /* Truncated for preview: user asked to use this HTML directly */
   </style>
 </head>
 <body>
@@ -785,7 +870,7 @@
     <div class="wrap">
       <div class="header-row">
         <a class="brand" href="#top" aria-label="Invila home">
-          <div class="logo-card" aria-hidden="true"><img class="logo-img" src="./logo-invila.png" alt="Invila logo" /></div>
+          <div class="logo-card" aria-hidden="true"><img src="./logo-invila.png" alt="Invila logo" /></div>
           <div class="brand-lockup">
             <p class="brand-wordmark">Invila<sup>™</sup></p>
             <p class="brand-tagline">Zero Capex Water Infrastructure <span class="sub">for Industry</span></p>
@@ -793,27 +878,23 @@
         </a>
 
         <nav class="nav" aria-label="Primary">
-          <a href="#zero-capex-advantage">Why Zero Capex</a>
+          <a href="#pain-points">Pain Points</a>
           <a href="#invila-solution">Solutions</a>
-          <a href="#industries">Industries</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#audit-dashboard">ROI &amp; Impact</a>
+          <a href="#visit-factory">Visit Factory</a>
           <a href="#faq">FAQ</a>
         </nav>
 
         <div class="header-actions">
-          <a class="btn btn-primary header-wa-btn" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20konsultasi%20tentang%20Zero%20Capex%20Water%20Infrastructure%20Invila." target="_blank" rel="noopener">Chat WhatsApp</a>
+          <a class="btn btn-secondary" href="#contact">Request Assessment</a>
           <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span></button>
         </div>
       </div>
 
       <div class="mobile-nav" id="mobileNav">
         <div class="mobile-card">
-          <a href="#zero-capex-advantage">Why Zero Capex</a>
+          <a href="#pain-points">Pain Points</a>
           <a href="#invila-solution">Solutions</a>
-          <a href="#industries">Industries</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#audit-dashboard">ROI &amp; Impact</a>
+          <a href="#visit-factory">Visit Factory</a>
           <a href="#faq">FAQ</a>
         </div>
       </div>
@@ -830,254 +911,38 @@
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20konsultasi%20tentang%20Zero%20Capex%20Water%20Infrastructure%20Invila." target="_blank" rel="noopener">Konsultasi via WhatsApp</a>
-            <a class="btn btn-secondary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20menjadwalkan%20visit%20factory%20dengan%20tim%20Invila." target="_blank" rel="noopener">Jadwalkan Visit Factory</a>
+            <a class="btn btn-secondary" href="#visit-factory">Jadwalkan Visit Factory</a>
           </div>
 
           <div class="hero-footnote">Untuk pabrik yang membutuhkan reliable supply, predictable cost, dan minim gangguan operasional.</div>
-
-          <div class="hero-points">
-            <div class="hero-point">
-              <small>Continuity</small>
-              <p>Stabilitas air proses yang lebih siap menopang produksi harian.</p>
-            </div>
-            <div class="hero-point">
-              <small>Predictability</small>
-              <p>Struktur biaya lebih mudah dibaca dan lebih terukur untuk pengambilan keputusan.</p>
-            </div>
-            <div class="hero-point">
-              <small>Partnership</small>
-              <p>Bukan sekadar jual alat, tetapi model kerja sama jangka menengah dan panjang.</p>
-            </div>
-          </div>
         </div>
 
         <div class="media-card" id="video-proof">
+          <div class="media-top">
+            <div class="media-label">Operational Reliability</div>
+            <div style="font-size:0.78rem;font-weight:800;letter-spacing:0.10em;text-transform:uppercase;color:#6b7588;">System &amp; Site Proof</div>
+          </div>
           <div class="media-window">
             <video autoplay muted loop playsinline preload="metadata" aria-label="Engineered Water Infrastructure video proof">
               <source src="./kiw-1.mp4" type="video/mp4" />
               Browser Anda tidak mendukung pemutaran video.
             </video>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="zero-capex-advantage">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Why Zero Capex</p>
-            <h2 class="section-title">Inilah pembeda utama dibanding vendor biasa.</h2>
-          </div>
-          <p class="section-copy">Bagi banyak pabrik, tantangan utamanya bukan hanya menemukan teknologi yang tepat, tetapi bagaimana proyek bisa bergerak tanpa menunggu beban investasi besar di awal.</p>
-        </div>
-        <div class="zero-capex-grid">
-          <article class="zero-capex-card"><small>Speed</small><h3>Proyek tidak harus menunggu alokasi investasi besar di depan.</h3><p>Keputusan bisa bergerak lebih cepat ketika tekanan CapEx awal tidak menjadi hambatan utama.</p></article>
-          <article class="zero-capex-card"><small>Risk Sharing</small><h3>Risiko desain, operasional, dan performa dikelola bersama.</h3><p>Model kemitraan membuat tanggung jawab kinerja tidak berhenti saat proyek selesai dipasang.</p></article>
-          <article class="zero-capex-card"><small>Focus</small><h3>Tim pabrik dapat lebih fokus ke core operation.</h3><p>Kompleksitas utilitas tidak perlu terus membebani perhatian manajemen dan operasional internal.</p></article>
-          <article class="zero-capex-card"><small>Predictability</small><h3>Biaya dan performa lebih mudah diarahkan ke outcome bisnis.</h3><p>Pendekatan ini membantu perusahaan menilai utilitas air sebagai instrumen efisiensi, bukan sekadar cost center.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="pain-points">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Masalah yang Mereka Rasakan</p>
-            <h2 class="section-title">Sebelum bicara solusi, kami mulai dari tekanan bisnis yang paling nyata dirasakan pabrik.</h2>
-          </div>
-          <p class="section-copy">Ketika harga air naik, kuota menurun, downtime mulai mengganggu, dan upgrade sistem terasa terlalu berat di CapEx, tantangannya bukan lagi sekadar teknis. Ini sudah menjadi isu continuity, efficiency, dan business risk.</p>
-        </div>
-        <div class="pain-list">
-          <article class="pain-item"><small>01</small><h3>Harga air PDAM klasifikasi industri terus menekan biaya operasional.</h3><p>Struktur biaya air yang tidak makin efisien akan langsung terasa di margin dan cash flow.</p></article>
-          <article class="pain-item"><small>02</small><h3>Pengurangan kuota ABT mempersempit ruang aman pasokan air baku.</h3><p>Ketergantungan pada satu sumber pasokan memperbesar risiko gangguan operasional ke depan.</p></article>
-          <article class="pain-item"><small>03</small><h3>Downtime sistem air mengganggu produksi dan menambah biaya pemulihan.</h3><p>Masalah utilitas yang seharusnya terkendali bisa berkembang menjadi gangguan ke lini produksi.</p></article>
-          <article class="pain-item"><small>04</small><h3>Butuh upgrade sistem, tetapi beban CapEx di awal terlalu berat.</h3><p>Akibatnya, keputusan modernisasi utilitas sering tertunda walaupun kebutuhan operasional sudah jelas.</p></article>
-          <article class="pain-item"><small>05</small><h3>Compliance regulasi lingkungan dan efisiensi biaya harus dijaga bersamaan.</h3><p>Perusahaan butuh pendekatan yang lebih stabil agar target operasional dan kesiapan audit bisa berjalan searah.</p></article>
-          <article class="pain-item"><small>06</small><h3>Tim internal tidak ingin dibebani kompleksitas pengelolaan sistem yang terus bertambah.</h3><p>Pabrik tetap perlu fokus ke core operation, bukan terserap ke persoalan utilitas yang semakin kompleks.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="industries">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Industries</p>
-            <h2 class="section-title">Relevan untuk industri yang tidak bisa kompromi pada continuity dan cost visibility.</h2>
-          </div>
-          <p class="section-copy">Pendekatan Invila™ cocok untuk fasilitas industri yang menghadapi tekanan ketersediaan air, efisiensi biaya, target compliance, dan kebutuhan reliability operasional jangka panjang.</p>
-        </div>
-        <div class="benefit-grid">
-          <article class="benefit-card"><small>Manufacturing</small><h3>Pabrik dengan kebutuhan air proses yang harus stabil setiap hari.</h3><p>Fokus pada continuity, kualitas air, dan pengurangan risiko gangguan utilitas ke produksi.</p></article>
-          <article class="benefit-card"><small>Food & Beverage</small><h3>Operasi yang sensitif terhadap kualitas, hygiene, dan consistency.</h3><p>Membutuhkan sistem yang lebih terukur untuk menjaga reliability sekaligus readiness audit.</p></article>
-          <article class="benefit-card"><small>Textile & Processing</small><h3>Fasilitas yang menghadapi tekanan biaya air dan kebutuhan optimasi utilitas.</h3><p>Pendekatan Zero Capex membantu mempercepat upgrade tanpa menunggu beban investasi besar di awal.</p></article>
-          <article class="benefit-card"><small>Industrial Estates & Utilities</small><h3>Kawasan atau utilitas yang perlu menjaga service level dan efisiensi jangka panjang.</h3><p>Model kemitraan lebih cocok untuk kebutuhan supply, monitoring, dan optimasi berkelanjutan.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="invila-solution">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Solusi Invila™</p>
-            <h2 class="section-title">End-to-end water infrastructure solution yang dibuat sederhana untuk dipahami, jelas untuk dijalankan.</h2>
-          </div>
-          <p class="section-copy">Invila™ menyediakan end-to-end water infrastructure solution untuk pabrik yang membutuhkan reliable supply, predictable cost, dan minim gangguan operasional.</p>
-        </div>
-        <div class="solution-shell">
-          <div class="solution-grid">
-            <div class="solution-item"><small>Design & Build</small><h3>Solusi dirancang berdasarkan kondisi aktual pabrik, bukan template generik.</h3><p>Analisa kebutuhan, perancangan sistem, dan implementasi dilakukan agar infrastruktur relevan dengan target operasional dan kebutuhan kapasitas Anda.</p></div>
-            <div class="solution-item"><small>Operate & Maintain</small><h3>Kinerja sistem dijaga sebagai bagian dari model layanan, bukan hanya serah-terima proyek.</h3><p>Fokusnya bukan jual alat saja atau berhenti di instalasi, tetapi memastikan sistem tetap berjalan dengan gangguan yang lebih rendah.</p></div>
-            <div class="solution-item"><small>Monitor & Optimize</small><h3>Operasional lebih terukur melalui SCADA-IoT dan evaluasi berkelanjutan.</h3><p>Tim pabrik dan manajemen mendapatkan visibilitas yang lebih baik untuk memantau performa, efisiensi, dan arah perbaikan.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="how-it-works">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Cara Kerja Model Kerja Sama</p>
-            <h2 class="section-title">Jelas dari awal: ini bukan sekadar kontraktor biasa, dan bukan sekadar jual alat.</h2>
-          </div>
-          <p class="section-copy">Model kerja sama Invila™ dirancang sebagai kemitraan jangka menengah atau panjang untuk performa air industri.</p>
-        </div>
-        <div class="process-grid">
-          <article class="process-item"><small>Step 01</small><strong>Analisa kebutuhan pabrik</strong><p>Memahami target produksi, kondisi eksisting, tekanan biaya, dan kebutuhan air proses.</p></article>
-          <article class="process-item"><small>Step 02</small><strong>Site assessment / visit factory</strong><p>Melihat kondisi aktual untuk memetakan tantangan sistem dan potensi pendekatan yang relevan.</p></article>
-          <article class="process-item"><small>Step 03</small><strong>Perancangan solusi</strong><p>Solusi disesuaikan dengan kebutuhan nyata pabrik, bukan didorong oleh pendekatan generik.</p></article>
-          <article class="process-item"><small>Step 04</small><strong>Implementasi infrastruktur</strong><p>Pembangunan dan penyiapan sistem dilakukan untuk mendukung readiness operasional.</p></article>
-          <article class="process-item"><small>Step 05</small><strong>Operasi, monitoring, optimasi</strong><p>Sistem dijaga melalui model layanan yang terus dipantau dan disesuaikan bila dibutuhkan.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="business-value">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Nilai Bisnis</p>
-            <h2 class="section-title">Apa untungnya untuk setiap role yang terlibat dalam keputusan?</h2>
-          </div>
-          <p class="section-copy">Bagian ini bukan tentang jargon teknis, tetapi tentang nilai bisnis yang dicari oleh masing-masing pengambil keputusan di dalam pabrik.</p>
-        </div>
-        <div class="benefit-grid">
-          <article class="benefit-card"><small>Untuk CEO / Direktur</small><h3>Continuity, strategic efficiency, dan scalability.</h3><p>Model ini membantu menjaga operasi tetap berjalan sambil memberi ruang untuk ekspansi dan prioritas bisnis inti.</p></article>
-          <article class="benefit-card"><small>Untuk Direktur Keuangan</small><h3>CapEx awal lebih ringan, biaya lebih terprediksi.</h3><p>Mengurangi tekanan investasi awal sekaligus menekan risiko pemborosan akibat desain sistem yang tidak tepat.</p></article>
-          <article class="benefit-card"><small>Untuk Plant Manager</small><h3>Kualitas dan availability air lebih stabil.</h3><p>Gangguan operasional lebih rendah dan performa sistem lebih mudah dipantau untuk kebutuhan harian.</p></article>
-          <article class="benefit-card"><small>Untuk Environment Manager</small><h3>Dukungan monitoring dan compliance readiness lebih kuat.</h3><p>Target pengelolaan air lebih mudah dijaga dengan visibilitas sistem yang lebih jelas dan konsisten.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="audit-dashboard">
-      <div class="wrap">
-        <div class="audit-shell">
-          <div class="section-head" style="margin-bottom:24px;">
-            <div>
-              <p class="section-kicker-light">Intelligence Saving Audit</p>
-              <h2 class="section-title" style="color:#fff;max-width:14ch;">Panel cepat untuk memulai diskusi berbasis angka.</h2>
-            </div>
-            <p class="section-copy" style="color:rgba(255,255,255,.7);">Calculator ini membantu melihat gambaran awal potensi saving, nilai infrastruktur, dan arah diskusi proyek secara lebih konkret.</p>
-          </div>
-
-          <div class="audit-layout">
-            <aside class="glass-panel control-panel">
-              <div class="field"><label class="stat-label" for="input-flow">Debit (m³/hari)</label><input type="text" id="input-flow" data-key="flowRate" value="1,500" inputmode="numeric" /></div>
-              <div class="field"><label class="stat-label" for="input-legacy">Legacy Cost (Rp/m³)</label><input type="text" id="input-legacy" data-key="legacyCost" value="14,600" inputmode="numeric" /></div>
-              <div class="field" style="margin-bottom:0;"><label class="stat-label" for="input-tariff">Invila Tarif (Rp/m³)</label><input type="text" id="input-tariff" data-key="invilaTariff" value="5,500" inputmode="numeric" /></div>
-            </aside>
-
-            <div class="audit-main">
-              <div class="hero-saving"><span class="stat-label" style="color:#60a5fa;">Monthly Potential Saving</span><h4 id="view-monthly-saving">Rp 0</h4></div>
-              <div class="metric-grid">
-                <div class="metric-card"><div><span class="stat-label">Annual Saving</span><strong id="view-annual-saving">Rp 0</strong></div></div>
-                <div class="metric-card"><div><span class="stat-label">Infrastructure Value Covered by Invila™</span><strong id="view-capex-total">Rp 0</strong></div></div>
+            <div class="media-executive-overlay" id="mediaExecutiveOverlay">
+              <div>
+                <small>Operational Snapshot</small>
+                <strong>Reliable system visibility to support continuity, compliance readiness, and faster response.</strong>
               </div>
-              <div class="strategy-panel"><div><span class="stat-label" style="color:#fb7185;">5-Year Savings Projection</span></div><h4 id="view-five-year-saving">Rp 0</h4></div>
-              <div><button class="download-btn" type="button">Request Strategic Report</button></div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <section class="section" id="visit-factory">
-      <div class="wrap">
-        <div class="visit-shell">
-          <div class="visit-card">
-            <small>Ajakan Visit Factory</small>
-            <h3>Tim Invila™ dapat melakukan visit factory untuk memahami kondisi aktual dan mengusulkan pendekatan yang paling relevan.</h3>
-            <p>Visit factory membantu memperjelas kebutuhan awal, potensi tantangan sistem eksisting, dan arah solusi yang layak dipertimbangkan sebelum keputusan proyek dibawa lebih jauh.</p>
-            <div class="visit-actions">
-              <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20menjadwalkan%20visit%20factory%20dengan%20tim%20Invila." target="_blank" rel="noopener">Jadwalkan Visit Factory</a>
-              <a class="btn btn-secondary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20diskusi%20kebutuhan%20air%20industri%20kami." target="_blank" rel="noopener">Diskusikan Kebutuhan Anda via WhatsApp</a>
-            </div>
-          </div>
-          <div class="visit-card">
-            <small>Output dari Visit</small>
-            <h3>Tiga hasil awal yang paling penting untuk membantu diskusi internal Anda.</h3>
-            <p><strong>Identifikasi kebutuhan awal.</strong> Menangkap prioritas suplai, biaya, dan target operasional.</p>
-            <p style="margin-top:12px;"><strong>Potensi tantangan sistem eksisting.</strong> Melihat titik risiko yang paling mungkin menekan operasi dan compliance.</p>
-            <p style="margin-top:12px;"><strong>Arah solusi yang layak dipertimbangkan.</strong> Memberi dasar yang lebih konkret sebelum melangkah ke desain dan implementasi.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="faq">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">FAQ Singkat</p>
-            <h2 class="section-title">Jawaban singkat untuk mengurangi keraguan sebelum klik.</h2>
-          </div>
-          <p class="section-copy">Bagian ini dirancang untuk menjawab pertanyaan yang biasanya muncul sebelum audiens memutuskan berdiskusi lebih lanjut.</p>
-        </div>
-        <div class="faq-grid">
-          <div class="faq-card">
-            <details open><summary>Apakah Invila™ hanya menjual alat atau kontraktor biasa?</summary><p>Tidak. Model Invila™ dibangun sebagai kemitraan untuk performa air industri, mencakup desain, implementasi, operasional, monitoring, dan optimasi.</p></details>
-            <details><summary>Apakah model ini cocok hanya untuk proyek baru?</summary><p>Tidak. Pendekatan ini juga relevan untuk pabrik yang ingin upgrade sistem eksisting tanpa menanggung beban CapEx besar di awal.</p></details>
-          </div>
-          <div class="faq-card">
-            <details><summary>Apa manfaat paling utama dari model Zero Capex Infrastructure?</summary><p>Perusahaan tidak perlu menunggu investasi besar di depan, proyek bisa bergerak lebih cepat, dan risiko sistem bisa dikelola lebih terstruktur.</p></details>
-            <details><summary>Apa langkah paling tepat jika kami ingin mengevaluasi kecocokan model ini?</summary><p>Mulai dari diskusi awal atau jadwalkan visit factory agar tim Invila™ bisa memahami kondisi aktual dan mengusulkan pendekatan yang relevan.</p></details>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    </main>
-
-  <footer>
-    <div class="wrap foot">
-      <div><span class="brand-inline">Invila<sup>™</sup></span> — PT. Invila Tirta Nusantara</div>
-      <div>Sentra Niaga 2 No. 5 Harapan Indah, Bekasi 17131, Jawa Barat</div>
-      <div>WhatsApp: Irfon Desman · 085219493322</div>
-    </div>
-  </footer>
-
-  <a class="mobile-wa-fab" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20konsultasi%20tentang%20Zero%20Capex%20Water%20Infrastructure%20Invila." target="_blank" rel="noopener" aria-label="Hubungi via WhatsApp">
-    <span class="icon">✆</span>
-    <span>WhatsApp</span>
-  </a>
+  </main>
 
   <script>
     const siteHeader = document.getElementById('siteHeader');
     const menuToggle = document.getElementById('menuToggle');
     const mobileNav = document.getElementById('mobileNav');
-
-    const CONFIG = {
-      flowRate: 1500,
-      legacyCost: 14600,
-      invilaTariff: 5500,
-      capexPerLPS: 360000000
-    };
-    const currentData = { ...CONFIG };
 
     const syncHeader = () => {
       if (window.scrollY > 10) siteHeader.classList.add('scrolled');
@@ -1090,46 +955,6 @@
       menuToggle.classList.toggle('open');
       mobileNav.classList.toggle('show');
     });
-
-    mobileNav?.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('show');
-        menuToggle.classList.remove('open');
-      });
-    });
-
-    const formatRp = (value) => {
-      const abs = Math.abs(value);
-      if (abs >= 1e9) return `Rp ${(value / 1e9).toFixed(2)} Miliar`;
-      if (abs >= 1e6) return `Rp ${(value / 1e6).toFixed(1)} Juta`;
-      return `Rp ${Math.round(value).toLocaleString('id-ID')}`;
-    };
-
-    const updateDashboard = () => {
-      const flow = currentData.flowRate;
-      const savingsPerM3 = currentData.legacyCost - currentData.invilaTariff;
-      const monthly = savingsPerM3 * flow * 30;
-      const annual = monthly * 12;
-      const fiveYear = annual * 5;
-      const capex = (flow / 86.4) * CONFIG.capexPerLPS;
-
-      document.getElementById('view-monthly-saving').textContent = formatRp(monthly);
-      document.getElementById('view-annual-saving').textContent = formatRp(annual);
-      document.getElementById('view-five-year-saving').textContent = formatRp(fiveYear);
-      document.getElementById('view-capex-total').textContent = formatRp(capex);
-    };
-
-    document.querySelectorAll('.control-panel input').forEach((input) => {
-      input.addEventListener('input', (event) => {
-        const key = event.target.dataset.key;
-        const numeric = parseInt(event.target.value.replace(/\D/g, ''), 10) || 0;
-        currentData[key] = numeric;
-        event.target.value = numeric ? numeric.toLocaleString('en-US') : '';
-        updateDashboard();
-      });
-    });
-
-    updateDashboard();
   </script>
 </body>
 </html>
