@@ -440,6 +440,7 @@
     }
 
     .value-band,
+    .pressure-shell,
     .solution-shell,
     .flow-shell,
     .proof-shell,
@@ -477,6 +478,60 @@
       line-height: 1.62;
       color: #172033;
       font-weight: 650;
+    }
+
+    .pressure-shell {
+      margin-top: 20px;
+      padding: 18px;
+      display: grid;
+      gap: 16px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.86));
+    }
+    .pressure-story {
+      display: grid;
+      grid-template-columns: minmax(240px, 0.9fr) minmax(0, 1.1fr);
+      gap: 24px;
+      align-items: start;
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(17,24,39,0.06);
+    }
+    .pressure-story:nth-child(even) {
+      grid-template-columns: minmax(0, 1.1fr) minmax(240px, 0.9fr);
+    }
+    .pressure-story:nth-child(even) .pressure-head {
+      order: 2;
+    }
+    .pressure-story:nth-child(even) .pressure-copy {
+      order: 1;
+    }
+    .pressure-head small {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+    .pressure-head h3 {
+      margin: 0;
+      font-size: clamp(1.2rem, 2vw, 1.7rem);
+      line-height: 1.18;
+      letter-spacing: -0.035em;
+      color: #0f172a;
+      text-wrap: balance;
+    }
+    .pressure-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.84;
+      text-wrap: pretty;
     }
 
     .solution-shell,
@@ -582,6 +637,12 @@
       .flow-grid,
       .value-grid,
       .cta-shell { grid-template-columns: 1fr; }
+      .pressure-story,
+      .pressure-story:nth-child(even) { grid-template-columns: 1fr; }
+      .pressure-story:nth-child(even) .pressure-head,
+      .pressure-story:nth-child(even) .pressure-copy {
+        order: initial;
+      }
       .section-head { display: grid; grid-template-columns: 1fr; }
       .hero-grid { gap: 28px; }
       .media-card { margin-top: 0; }
@@ -716,18 +777,60 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Why Zero Capex</p>
-            <h2 class="section-title">Ketika kebutuhan sistem sudah jelas, hambatannya sering kali ada di struktur investasi.</h2>
+            <p class="section-kicker">Tantangan yang Semakin Berat bagi Industri</p>
+            <h2 class="section-title">Biaya air yang terus naik perlahan menggerus profit.</h2>
           </div>
-          <p class="section-copy">Banyak pabrik mengetahui bahwa sistem air proses perlu ditingkatkan, tetapi keputusan tertahan karena capex awal terlalu besar, risiko implementasi belum cukup jelas, atau tim internal perlu waktu lebih panjang untuk menyelaraskan finance dan operasional.</p>
+          <p class="section-copy">Harga air PDAM industri yang tinggi, kuota ABT yang makin diperketat, dan biaya operasional WWTP yang terus membesar menjadikan air bukan lagi sekadar isu utilitas, tetapi faktor yang langsung menekan margin dan profitabilitas perusahaan.</p>
         </div>
         <div class="value-band">
           <div class="value-grid">
-            <div class="value-item"><small>Financial Relief</small><p>Mengurangi tekanan investasi awal tanpa mengabaikan kebutuhan operasional yang sudah mendesak.</p></div>
-            <div class="value-item"><small>Reliability Focus</small><p>Menjaga continuity sistem air proses agar gangguan utilitas tidak berkembang menjadi gangguan produksi.</p></div>
-            <div class="value-item"><small>Strategic Visibility</small><p>Membantu manajemen melihat kebutuhan air proses sebagai keputusan bisnis, bukan hanya isu teknis.</p></div>
-            <div class="value-item"><small>Implementation Support</small><p>Memberi rasa aman karena pendekatan mencakup desain, implementasi, monitoring, dan dukungan jangka lanjut.</p></div>
+            <div class="value-item"><small>PDAM Industri</small><p>Tarif yang terus meningkat membuat biaya air menjadi komponen yang makin terasa dalam struktur biaya operasional.</p></div>
+            <div class="value-item"><small>Kuota ABT</small><p>Pembatasan yang makin ketat memperkecil ruang aman pasokan dan meningkatkan tekanan terhadap perencanaan produksi.</p></div>
+            <div class="value-item"><small>Biaya WWTP</small><p>Pengolahan air limbah yang makin mahal menambah beban operasional yang tidak selalu terlihat di awal keputusan bisnis.</p></div>
+            <div class="value-item"><small>Profitabilitas</small><p>Akumulasi biaya air dan utilitas yang tidak terkendali perlahan menggerus margin serta fleksibilitas perusahaan.</p></div>
           </div>
+        </div>
+
+        <div class="pressure-shell">
+          <article class="pressure-story">
+            <div class="pressure-head">
+              <small>The Growth Barrier</small>
+              <h3>Keputusan Strategis yang Tersandera Dilema Investasi</h3>
+            </div>
+            <div class="pressure-copy">
+              <p>Banyak perusahaan sebenarnya sudah menyadari bahwa sistem air mereka perlu ditingkatkan. Namun di saat yang sama, keputusan upgrade sering tertahan karena CAPEX sulit disetujui, risiko implementasi dianggap besar, dan energi tim internal sudah terkuras habis hanya untuk menjaga operasional harian tetap berjalan.</p>
+            </div>
+          </article>
+
+          <article class="pressure-story">
+            <div class="pressure-head">
+              <small>The Triple Pressure</small>
+              <h3>Margin Profit yang Tergerus Pengetatan Regulasi &amp; Biaya Operasional</h3>
+            </div>
+            <div class="pressure-copy">
+              <p>Akibatnya, perusahaan harus menghadapi tekanan biaya dari banyak arah sekaligus. Harga air PDAM kategori industri terus menekan biaya operasional. Kuota ABT yang makin diperketat dan dikurangi membuat kepastian pasokan semakin rentan. Di sisi lain, biaya operasional WWTP yang tidak efisien terus membesar dan menambah beban cash flow dari waktu ke waktu.</p>
+            </div>
+          </article>
+
+          <article class="pressure-story">
+            <div class="pressure-head">
+              <small>The Operational Blindspot</small>
+              <h3>Krisis Visibility: Saat Masalah Teknis Mengancam Kelangsungan Produksi</h3>
+            </div>
+            <div class="pressure-copy">
+              <p>Masalahnya tidak berhenti pada utilitas air. Ketika pasokan belum cukup andal, biaya pengolahan terus naik, dan sistem belum memberi visibility data yang memadai, perusahaan bukan hanya menghadapi tantangan teknis, tetapi juga tekanan langsung terhadap biaya produksi, margin, dan kemampuan menjaga profit tetap sehat.</p>
+            </div>
+          </article>
+
+          <article class="pressure-story">
+            <div class="pressure-head">
+              <small>The Core Business Distraction</small>
+              <h3>Kehilangan Fokus Utama: Sumber Daya Perusahaan yang Tersita Masalah Repetitif</h3>
+            </div>
+            <div class="pressure-copy">
+              <p>Dalam kondisi seperti ini, banyak tim akhirnya kehilangan fokus pada bisnis inti. Waktu, perhatian, dan sumber daya perusahaan tersandera untuk menangani persoalan infrastruktur air yang seharusnya sudah bisa dikelola dengan pendekatan yang lebih terukur, lebih andal, dan lebih realistis bagi kebutuhan industri saat ini.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
