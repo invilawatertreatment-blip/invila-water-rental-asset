@@ -42,7 +42,7 @@
     a { color: inherit; text-decoration: none; }
     button, input { font: inherit; }
     button { cursor: pointer; }
-    .wrap { width: min(calc(100% - 56px), var(--max)); margin: 0 auto; }
+    .wrap { width: min(calc(100% - 64px), var(--max)); margin: 0 auto; }
 
     .brand-wordmark,
     .brand-tagline,
@@ -764,55 +764,277 @@
       .pressure-story:nth-child(even) .pressure-copy {
         order: initial;
       }
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .hero-grid { gap: 28px; }
+      .media-card { margin-top: 0; }
+      .solution-shell,
+      .flow-shell,
+      .proof-shell,
+      .cta-shell,
+      .value-band,
+      .pressure-shell {
+        padding: 24px;
+      }
+    }
+      .menu-toggle { display: inline-block; }
+      .mobile-nav.show { display: block; }
+      .hero-grid,
+      .solution-grid,
+      .proof-grid,
+      .flow-grid,
+      .value-grid,
+      .cta-shell,
+      .solution-lead,
+      .solution-benefits,
+      .solution-cta { grid-template-columns: 1fr; }
+      .pressure-story,
+      .pressure-story:nth-child(even) { grid-template-columns: 1fr; }
+      .pressure-story:nth-child(even) .pressure-head,
+      .pressure-story:nth-child(even) .pressure-copy {
+        order: initial;
+      }
       .section-head { grid-template-columns: 1fr; }
       .hero-grid { gap: 30px; }
       .media-card { margin-top: 0; }
     }
 
     @media (max-width: 780px) {
-      .wrap { width: min(calc(100% - 24px), var(--max)); }
-      .header-row { min-height: 84px; }
-      .brand { gap: 12px; align-items: flex-start; }
-      .logo-card { width: 64px; height: 64px; }
-      .brand-wordmark { font-size: clamp(1.95rem, 9vw, 2.45rem); white-space: normal; }
-      .brand-tagline { white-space: normal; line-height: 1.22; font-size: 0.78rem; letter-spacing: 0.03em; }
-      .hero { padding: 26px 0 64px; }
+      .wrap { width: min(calc(100% - 28px), 560px); }
+
+      .site-header {
+        background: rgba(255,255,255,0.94);
+      }
+      .header-row {
+        min-height: 76px;
+        gap: 10px;
+      }
+      .brand {
+        gap: 10px;
+        align-items: center;
+      }
+      .logo-card {
+        width: 52px;
+        height: 52px;
+      }
+      .brand-lockup {
+        gap: 4px;
+      }
+      .brand-wordmark {
+        font-size: clamp(1.7rem, 8vw, 2.15rem);
+        white-space: normal;
+        line-height: 0.94;
+      }
+      .brand-tagline {
+        white-space: normal;
+        line-height: 1.18;
+        font-size: 0.72rem;
+        letter-spacing: 0.02em;
+      }
+      .menu-toggle {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+      }
+
+      .hero {
+        padding: 18px 0 54px;
+      }
+      .hero-grid {
+        gap: 22px;
+      }
+      .section-kicker {
+        margin-bottom: 8px;
+        font-size: 0.62rem;
+        letter-spacing: 0.12em;
+      }
       h1 {
         max-width: 100%;
-        font-size: clamp(1.95rem, 7.8vw, 2.55rem);
-        line-height: 1.02;
+        font-size: clamp(1.9rem, 7.4vw, 2.4rem);
+        line-height: 1.03;
+        letter-spacing: -0.05em;
       }
       .hero-sub {
-        font-size: 0.98rem;
-        line-height: 1.72;
+        margin-top: 14px;
+        font-size: 0.94rem;
+        line-height: 1.66;
         max-width: 100%;
+      }
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 18px;
+      }
+      .btn {
+        width: 100%;
+        min-height: 48px;
+        padding: 0 16px;
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+      }
+      .hero-footnote {
+        margin-top: 14px;
+        font-size: 0.84rem;
+        line-height: 1.55;
+        align-items: flex-start;
       }
       .hero-points,
       .value-grid,
       .solution-grid,
       .proof-grid,
-      .flow-grid { grid-template-columns: 1fr; }
+      .flow-grid,
+      .solution-benefits {
+        grid-template-columns: 1fr;
+      }
+      .hero-points {
+        gap: 10px;
+        margin-top: 22px;
+      }
+      .hero-point,
+      .value-item,
+      .proof-card,
+      .flow-card,
+      .solution-item {
+        padding: 16px;
+        border-radius: 18px;
+      }
+      .hero-point p,
+      .value-item p,
+      .proof-card p,
+      .flow-card p,
+      .solution-item p,
+      .pressure-copy p,
+      .solution-body p,
+      .solution-summary p,
+      .solution-close p,
+      .section-copy,
+      .cta-shell p,
+      .solution-cta p {
+        font-size: 0.92rem;
+        line-height: 1.68;
+      }
+
+      .media-card,
       .value-band,
       .pressure-shell,
       .solution-shell,
       .flow-shell,
       .proof-shell,
-      .cta-shell,
-      .media-card { padding: 20px; border-radius: 24px; }
-      .media-window {
+      .cta-shell {
+        padding: 16px;
         border-radius: 20px;
-        min-height: 300px;
-        height: 300px;
+      }
+      .media-top {
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+      .media-label,
+      .media-top div[style] {
+        font-size: 0.6rem !important;
+        letter-spacing: 0.1em !important;
+      }
+      .media-window {
+        border-radius: 18px;
+        min-height: 240px;
+        height: 240px;
       }
       .media-window video {
+        border-radius: 18px;
+      }
+      .media-executive-overlay {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        padding: 10px 12px;
+        border-radius: 14px;
+      }
+      .media-executive-overlay small {
+        font-size: 0.56rem;
+      }
+      .media-executive-overlay strong {
+        font-size: 0.88rem;
+        line-height: 1.35;
+        max-width: 100%;
+      }
+
+      .section {
+        padding: 0 0 56px;
+      }
+      .section-head {
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+      .section-title {
+        max-width: 100%;
+        font-size: clamp(1.35rem, 6.8vw, 1.8rem);
+        line-height: 1.08;
+      }
+
+      .pressure-shell {
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .pressure-story,
+      .pressure-story:nth-child(even) {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 18px 16px 18px 18px;
+        border-radius: 18px;
+      }
+      .pressure-head h3 {
+        max-width: 100%;
+        font-size: 1.08rem;
+        line-height: 1.2;
+      }
+
+      .solution-shell {
+        gap: 20px;
+      }
+      .solution-lead {
+        gap: 16px;
+        padding-bottom: 0;
+      }
+      .solution-summary {
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .solution-cta,
+      .cta-shell {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 18px;
         border-radius: 20px;
       }
-      .btn { width: 100%; }
-      .hero-actions { display: grid; grid-template-columns: 1fr; }
-      .section { padding: 0 0 72px; }
-      .section-title { max-width: 100%; font-size: clamp(1.5rem, 7vw, 2rem); }
-      .foot { font-size: 0.8rem; }
-      .mobile-wa-fab { display: inline-flex; }
+      .solution-cta h3,
+      .cta-shell h3 {
+        font-size: 1.25rem;
+        line-height: 1.12;
+      }
+
+      .mobile-card {
+        padding: 12px;
+        border-radius: 18px;
+      }
+      .mobile-card a {
+        padding: 11px 12px;
+        border-radius: 12px;
+        font-size: 0.78rem;
+      }
+
+      .foot {
+        font-size: 0.78rem;
+        gap: 8px;
+      }
+      .mobile-wa-fab {
+        display: inline-flex;
+        min-width: 54px;
+        height: 54px;
+        padding: 0 16px;
+        font-size: 0.68rem;
+      }
     }
   </style>
 </head>
