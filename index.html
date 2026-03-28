@@ -4,26 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Invila™ | Zero Capex Water Infrastructure</title>
-  <meta name="description" content="Landing page executive untuk Invila™: Zero Capex Water Infrastructure, Water as a Service, SCADA-IoT visibility, dan strategic saving audit untuk proyek air industri." />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <meta name="description" content="Landing page executive Invila™ untuk industri: tenang, rapi, meyakinkan, dan langsung menunjukkan manfaat bisnis dari model Zero Capex Water Infrastructure." />
   <style>
     :root {
-      --ink: #10182b;
-      --muted: #5f6c84;
-      --line: rgba(16, 24, 43, 0.08);
-      --brand: #2a5fff;
-      --brand-dark: #17378f;
-      --brand-soft: rgba(42, 95, 255, 0.08);
-      --teal: #0f766e;
-      --rose: #f43f5e;
-      --dark-hero: #08111f;
-      --shadow: 0 24px 64px rgba(17, 24, 39, 0.08);
-      --shadow-soft: 0 14px 28px rgba(17, 24, 39, 0.05);
+      --bg: #f5f7fb;
+      --surface: rgba(255,255,255,0.88);
+      --surface-strong: #ffffff;
+      --ink: #111827;
+      --muted: #5f6b7a;
+      --line: rgba(17,24,39,0.08);
+      --brand: #2257d8;
+      --brand-soft: rgba(34,87,216,0.08);
+      --shadow: 0 18px 42px rgba(15,23,42,0.07);
+      --shadow-soft: 0 10px 22px rgba(15,23,42,0.05);
       --pill: 999px;
-      --max: 1240px;
-      --brand-name-size: clamp(36px, 3.9vw, 55px);
-      --brand-tagline-size: calc(var(--brand-name-size) * 13 / 55);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1220px;
     }
 
     * { box-sizing: border-box; }
@@ -33,9 +31,9 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 8% 10%, rgba(42, 95, 255, 0.07), transparent 22%),
-        radial-gradient(circle at 94% 4%, rgba(96, 165, 250, 0.1), transparent 20%),
-        linear-gradient(180deg, #ffffff 0%, #f7f9fc 48%, #f3f5fa 100%);
+        radial-gradient(circle at 10% 8%, rgba(34,87,216,0.06), transparent 24%),
+        radial-gradient(circle at 92% 0%, rgba(148,163,184,0.10), transparent 20%),
+        linear-gradient(180deg, #fbfcfe 0%, #f5f7fb 100%);
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -53,25 +51,24 @@
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 40;
-      background: rgba(255, 255, 255, 0.72);
+      z-index: 50;
+      background: rgba(255,255,255,0.78);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid transparent;
       transition: 180ms ease;
     }
     .site-header.scrolled {
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(255,255,255,0.92);
       border-bottom-color: var(--line);
-      box-shadow: 0 10px 30px rgba(17, 24, 39, 0.05);
+      box-shadow: 0 10px 28px rgba(15,23,42,0.05);
     }
     .header-row {
-      min-height: 96px;
+      min-height: 94px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
     }
-
     .brand {
       display: flex;
       align-items: center;
@@ -79,8 +76,8 @@
       min-width: 0;
     }
     .logo-card {
-      width: 84px;
-      height: 84px;
+      width: 74px;
+      height: 74px;
       display: grid;
       place-items: center;
       flex: 0 0 auto;
@@ -88,7 +85,7 @@
     .logo-card img {
       width: 100%;
       height: auto;
-      filter: drop-shadow(0 10px 24px rgba(42, 95, 255, 0.18));
+      filter: drop-shadow(0 10px 22px rgba(34,87,216,0.14));
     }
     .brand-lockup {
       display: flex;
@@ -99,13 +96,13 @@
     }
     .brand-wordmark {
       margin: 0;
-      font-size: var(--brand-name-size);
+      font-size: clamp(2rem, 3.3vw, 3rem);
       font-weight: 700;
       line-height: 0.92;
       letter-spacing: -0.05em;
-      color: #0c1323;
-      white-space: nowrap;
+      color: #0f172a;
       text-transform: uppercase;
+      white-space: nowrap;
     }
     .brand-wordmark sup {
       font-size: 0.42em;
@@ -116,29 +113,29 @@
     }
     .brand-tagline {
       margin: 0;
-      font-size: var(--brand-tagline-size);
+      font-size: clamp(0.72rem, 1vw, 0.88rem);
       font-weight: 700;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--brand);
       white-space: nowrap;
     }
     .brand-tagline .sub {
-      color: #121a2e;
+      color: #111827;
       letter-spacing: 0.05em;
       text-transform: none;
-      margin-left: 0.18em;
+      margin-left: 0.16em;
     }
 
-    .nav { display: flex; align-items: center; gap: 4px; }
+    .nav { display: flex; align-items: center; gap: 2px; }
     .nav a {
-      padding: 10px 14px;
+      padding: 10px 12px;
       border-radius: var(--pill);
-      font-size: 0.76rem;
+      font-size: 0.74rem;
       font-weight: 800;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #6b7588;
+      color: #6b7280;
       transition: 180ms ease;
     }
     .nav a:hover { background: var(--brand-soft); color: var(--brand); }
@@ -146,11 +143,11 @@
     .header-actions { display: flex; align-items: center; gap: 12px; }
     .menu-toggle {
       display: none;
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.94);
       padding: 0;
     }
     .menu-toggle::before,
@@ -172,33 +169,28 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 56px;
+      min-height: 54px;
       padding: 0 24px;
       border-radius: var(--pill);
       border: 1px solid transparent;
-      font-size: 0.79rem;
+      font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
-      transition: 180ms ease;
       white-space: nowrap;
+      transition: 180ms ease;
     }
     .btn:hover { transform: translateY(-1px); }
     .btn-primary {
       color: #fff;
-      background: linear-gradient(135deg, var(--brand), #5f84ff);
-      box-shadow: 0 18px 42px rgba(42, 95, 255, 0.24);
+      background: linear-gradient(135deg, var(--brand), #4e79e6);
+      box-shadow: 0 18px 36px rgba(34,87,216,0.20);
     }
     .btn-secondary {
       color: var(--ink);
-      background: rgba(255,255,255,0.84);
+      background: rgba(255,255,255,0.92);
       border-color: var(--line);
       box-shadow: var(--shadow-soft);
-    }
-    .btn-light {
-      background: #fff;
-      color: #0f1a36;
-      box-shadow: 0 18px 36px rgba(255,255,255,0.14);
     }
 
     .mobile-nav { display: none; padding-bottom: 18px; }
@@ -206,37 +198,58 @@
       display: grid;
       gap: 10px;
       padding: 16px;
-      border-radius: 24px;
-      background: rgba(255,255,255,0.94);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.98);
       border: 1px solid var(--line);
       box-shadow: var(--shadow-soft);
     }
     .mobile-card a {
       padding: 12px 14px;
-      border-radius: 16px;
+      border-radius: 14px;
       background: #f8fafc;
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 800;
-      color: #5f6c84;
+      color: #5f6b7a;
     }
 
-    .hero { padding: 40px 0 72px; }
+    .mobile-wa-fab {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 70;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      min-width: 58px;
+      height: 58px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #25d366, #16a34a);
+      color: #fff;
+      box-shadow: 0 18px 34px rgba(22,163,74,0.24);
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero { padding: 54px 0 88px; }
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.95fr);
-      gap: 42px;
+      grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+      gap: 48px;
       align-items: center;
     }
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 12px 18px;
+      padding: 11px 16px;
       border-radius: var(--pill);
-      border: 1px solid rgba(42,95,255,0.16);
-      background: rgba(255,255,255,0.9);
-      box-shadow: 0 12px 28px rgba(17,24,39,0.04);
-      font-size: 0.72rem;
+      border: 1px solid rgba(34,87,216,0.14);
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 10px 20px rgba(15,23,42,0.04);
+      font-size: 0.7rem;
       font-weight: 900;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -247,95 +260,62 @@
       height: 8px;
       border-radius: 999px;
       background: var(--brand);
-      box-shadow: 0 0 0 6px rgba(42,95,255,0.10);
+      box-shadow: 0 0 0 6px rgba(34,87,216,0.10);
     }
     h1 {
       margin: 24px 0 0;
-      max-width: 13ch;
-      font-size: clamp(2.9rem, 5.6vw, 5.4rem);
-      line-height: 0.98;
-      letter-spacing: -0.065em;
+      max-width: 12ch;
+      font-size: clamp(2.8rem, 5.6vw, 5.25rem);
+      line-height: 0.96;
+      letter-spacing: -0.07em;
       font-weight: 900;
-      color: #0d1426;
+      color: #0f172a;
       text-wrap: balance;
     }
-    h1 .headline-break,
-    h1 .accent { display: block; }
-    h1 .accent { color: var(--brand); margin-top: 0.14em; }
+    h1 .accent { color: var(--brand); display: block; margin-top: 0.12em; }
     .hero-sub {
-      margin: 20px 0 0;
-      max-width: 34rem;
-      font-size: 1rem;
-      line-height: 1.72;
+      margin: 24px 0 0;
+      max-width: 41rem;
+      font-size: 1.06rem;
+      line-height: 1.88;
       color: var(--muted);
       text-wrap: pretty;
     }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
     .hero-footnote {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-top: 16px;
-      font-size: 0.92rem;
-      color: #6b7588;
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: #6b7280;
       font-weight: 600;
     }
     .hero-footnote::before {
       content: "";
       width: 28px;
       height: 1px;
-      background: rgba(16,24,43,0.16);
-    }
-
-    .pain-head { margin-top: 34px; margin-bottom: 10px; max-width: 760px; }
-    .pain-kicker,
-    .section-kicker,
-    .risk-kicker,
-    .blueprint-kicker,
-    .engines-kicker,
-    .audit-kicker {
-      margin: 0 0 10px;
-      font-size: 0.72rem;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-    .pain-kicker,
-    .section-kicker,
-    .blueprint-kicker,
-    .audit-kicker { color: var(--brand); }
-    .risk-kicker { color: #dc2626; }
-    .engines-kicker { color: var(--teal); }
-    .pain-title {
-      margin: 0;
-      max-width: 18ch;
-      font-size: clamp(1.45rem, 2.5vw, 2.2rem);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
-      color: #0d1426;
-    }
-    .pain-bridge {
-      margin: 14px 0 0;
-      max-width: 52rem;
-      font-size: 1rem;
-      line-height: 1.74;
-      color: var(--muted);
-      text-wrap: pretty;
+      background: rgba(17,24,39,0.16);
     }
 
     .hero-points {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 30px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(16,24,43,0.08);
-      max-width: 760px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 34px;
+      max-width: 860px;
+    }
+    .hero-point {
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.86);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
     }
     .hero-point small {
       display: block;
       margin-bottom: 10px;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 900;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -343,29 +323,20 @@
     }
     .hero-point p {
       margin: 0;
-      font-size: 1rem;
+      font-size: 0.98rem;
       line-height: 1.6;
-      color: #152038;
+      color: #172033;
       font-weight: 650;
     }
 
     .media-card {
       position: relative;
-      padding: 16px;
-      border-radius: 30px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.88));
-      border: 1px solid rgba(255,255,255,0.94);
+      padding: 18px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.90));
+      border: 1px solid rgba(255,255,255,0.92);
       box-shadow: var(--shadow);
       overflow: hidden;
-      isolation: isolate;
-    }
-    .media-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(42,95,255,0.14), transparent 30%);
-      pointer-events: none;
-      z-index: -1;
     }
     .media-top {
       display: flex;
@@ -373,13 +344,13 @@
       justify-content: space-between;
       gap: 16px;
       margin-bottom: 14px;
-      padding: 2px 4px 0;
+      padding: 2px 2px 0;
     }
     .media-label {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 900;
       letter-spacing: 0.13em;
       text-transform: uppercase;
@@ -391,125 +362,111 @@
       height: 8px;
       border-radius: 999px;
       background: var(--brand);
-      box-shadow: 0 0 0 6px rgba(42,95,255,0.10);
+      box-shadow: 0 0 0 6px rgba(34,87,216,0.10);
     }
     .media-window {
       position: relative;
       overflow: hidden;
-      border-radius: 26px;
-      border: 1px solid rgba(16,24,43,0.08);
+      border-radius: 24px;
+      border: 1px solid rgba(17,24,39,0.08);
       background: #dfe7f6;
-      min-height: 520px;
-      isolation: isolate;
+      aspect-ratio: 16 / 10;
     }
     .media-window video {
-      position: absolute;
-      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      background: #cfd9ec;
-      transform: scale(1.01);
-    }
-    .media-window::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(8,14,28,0.18) 0%, rgba(8,14,28,0.08) 28%, rgba(8,14,28,0.42) 100%),
-        radial-gradient(circle at 18% 58%, rgba(56,160,255,0.28), transparent 22%);
-      pointer-events: none;
-      z-index: 1;
+      background: #dfe7f6;
     }
     .media-executive-overlay {
       position: absolute;
-      left: 16px;
-      right: 34px;
+      left: 18px;
+      right: 18px;
       bottom: 18px;
-      z-index: 2;
       display: grid;
-      gap: 6px;
-      padding: 10px 14px;
+      gap: 8px;
+      padding: 16px 18px;
       border-radius: 18px;
-      background: linear-gradient(180deg, rgba(9,16,32,0.03), rgba(9,16,32,0.26));
-      border: 1px solid rgba(255,255,255,0.07);
-      box-shadow: 0 8px 20px rgba(9,16,32,0.10);
-      backdrop-filter: blur(5px);
+      background: linear-gradient(180deg, rgba(9,16,32,0.08), rgba(9,16,32,0.68));
       color: #fff;
-      max-width: 560px;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(8px);
-      transition: opacity 240ms ease, transform 240ms ease, visibility 240ms ease;
-      pointer-events: none;
-    }
-    .media-executive-overlay.show {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
+      backdrop-filter: blur(5px);
     }
     .media-executive-overlay small {
       display: block;
-      font-size: 0.6rem;
+      font-size: 0.64rem;
       font-weight: 900;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.72);
+      color: rgba(255,255,255,0.74);
     }
     .media-executive-overlay strong {
       display: block;
-      max-width: 30ch;
-      font-size: clamp(0.96rem, 1.2vw, 1.12rem);
-      line-height: 1.26;
-      letter-spacing: -0.01em;
+      max-width: 26ch;
+      font-size: 1.06rem;
+      line-height: 1.32;
+      letter-spacing: -0.02em;
       color: #fff;
     }
 
-    .section { padding: 0 0 88px; }
+    .section { padding: 0 0 96px; }
     .section-head {
       display: flex;
       align-items: end;
       justify-content: space-between;
-      gap: 22px;
-      margin-bottom: 28px;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+    .section-kicker {
+      margin: 0 0 12px;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brand);
     }
     .section-title {
       margin: 0;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      line-height: 1.02;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.04;
       letter-spacing: -0.05em;
-      max-width: 10ch;
+      max-width: 11ch;
+      text-wrap: balance;
     }
     .section-copy {
-      max-width: 36rem;
+      max-width: 38rem;
       margin: 0;
       color: var(--muted);
-      font-size: 1.06rem;
-      line-height: 1.82;
+      font-size: 1.04rem;
+      line-height: 1.84;
     }
 
     .value-band,
     .solution-shell,
-    .risk-shell,
-    .blueprint-shell,
-    .engines-shell {
-      border-radius: 32px;
+    .flow-shell,
+    .proof-shell,
+    .cta-shell {
+      border-radius: var(--radius-xl);
       border: 1px solid var(--line);
       box-shadow: var(--shadow-soft);
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.86));
     }
-    .value-band {
-      padding: 28px 30px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,255,255,0.82));
-    }
+
+    .value-band { padding: 30px; }
     .value-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 24px;
+      gap: 18px;
+    }
+    .value-item {
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(17,24,39,0.06);
     }
     .value-item small {
       display: block;
       margin-bottom: 10px;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 900;
       letter-spacing: 0.13em;
       text-transform: uppercase;
@@ -517,352 +474,147 @@
     }
     .value-item p {
       margin: 0;
-      font-size: 1.08rem;
-      line-height: 1.55;
-      color: #131d34;
+      font-size: 1rem;
+      line-height: 1.62;
+      color: #172033;
       font-weight: 650;
     }
 
-    .risk-shell,
-    .blueprint-shell,
-    .engines-shell,
-    .audit-shell,
     .solution-shell,
+    .flow-shell,
+    .proof-shell,
     .cta-shell { padding: 34px; }
-    .risk-shell,
-    .blueprint-shell { background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.84)); }
-    .engines-shell { background: linear-gradient(180deg, rgba(240,253,250,0.92), rgba(255,255,255,0.84)); }
-    .risk-head,
-    .blueprint-head,
-    .engines-head,
-    .audit-head { margin-bottom: 24px; }
-    .risk-head h3,
-    .blueprint-head h3,
-    .engines-head h3,
-    .audit-head h3 {
-      margin: 0;
-      font-size: clamp(1.8rem, 3.4vw, 2.8rem);
-      line-height: 1.06;
-      letter-spacing: -0.05em;
-      color: #0d1426;
-      text-wrap: balance;
-    }
-    .risk-head p,
-    .blueprint-head p,
-    .engines-head p {
-      margin: 12px 0 0;
-      max-width: 48rem;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.74;
-    }
+    .solution-grid,
+    .proof-grid,
+    .flow-grid { display: grid; gap: 18px; }
+    .solution-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    .proof-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .flow-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 
-    .risk-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 24px;
+    .solution-item,
+    .proof-card,
+    .flow-card {
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(17,24,39,0.06);
     }
-    .risk-card {
-      display: flex;
-      align-items: center;
-      min-height: 84px;
-      padding: 18px 18px 18px 16px;
-      border-radius: 22px;
-      background: #fff;
-      border: 1px solid rgba(220,38,38,0.10);
-      border-left: 5px solid #ef4444;
-      transition: 180ms ease;
-      box-shadow: 0 10px 24px rgba(17,24,39,0.04);
-    }
-    .risk-card:hover {
-      transform: translateX(4px);
-      background: #fff7f7;
-      box-shadow: 0 14px 30px rgba(239,68,68,0.08);
-    }
-    .risk-card span {
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #172033;
-      line-height: 1.45;
-      text-align: left;
-    }
-    .risk-footnote {
-      margin: 18px 0 0;
-      text-align: center;
-      font-size: 0.9rem;
-      font-style: italic;
-      color: #94a3b8;
-      font-weight: 700;
-    }
-
-    .blueprint-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-    .blueprint-card {
-      padding: 28px;
-      border-radius: 28px;
-      background: #fff;
-      border: 1px solid rgba(16,24,43,0.06);
-      box-shadow: 0 14px 28px rgba(17,24,39,0.05);
-      transition: 180ms ease;
-      text-align: center;
-    }
-    .blueprint-card:hover { transform: translateY(-4px); box-shadow: 0 20px 38px rgba(17,24,39,0.08); }
-    .blueprint-icon,
-    .engine-icon {
-      width: 56px;
-      height: 56px;
-      margin: 0 auto 18px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      font-size: 1.4rem;
+    .solution-item small,
+    .proof-card small,
+    .flow-card small {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 0.7rem;
       font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--brand);
     }
-    .blueprint-icon { background: rgba(42,95,255,0.10); color: var(--brand); }
-    .blueprint-card h4,
-    .engine-card h4 {
+    .solution-item h3,
+    .proof-card h3,
+    .flow-card h3 {
       margin: 0 0 12px;
-      font-size: 1.22rem;
-      line-height: 1.22;
+      font-size: 1.18rem;
+      line-height: 1.28;
       letter-spacing: -0.03em;
-      color: #10182b;
+      color: #111827;
     }
-    .blueprint-card p,
-    .engine-card p {
+    .solution-item p,
+    .proof-card p,
+    .flow-card p {
       margin: 0;
       color: var(--muted);
       font-size: 0.98rem;
       line-height: 1.72;
     }
 
-    .engines-grid {
+    .cta-shell {
       display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 14px;
-    }
-    .engine-card {
-      padding: 20px 16px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid rgba(15,118,110,0.10);
-      text-align: center;
-      transition: 180ms ease;
-      box-shadow: 0 10px 24px rgba(15,118,110,0.04);
-    }
-    .engine-card:hover {
-      transform: translateY(-3px) scale(1.02);
-      border-color: rgba(15,118,110,0.24);
-      box-shadow: 0 18px 36px rgba(15,118,110,0.10);
-    }
-    .engine-icon { background: rgba(15,118,110,0.10); color: var(--teal); margin-bottom: 14px; }
-    .engine-card strong {
-      display: block;
-      font-size: 0.74rem;
-      line-height: 1.45;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #0f172a;
-    }
-
-    .audit-shell {
-      padding: 34px;
-      border-radius: 32px;
-      background: linear-gradient(135deg, var(--dark-hero) 0%, #020617 100%);
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 28px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
       color: #fff;
-      border: 1px solid rgba(255,255,255,0.06);
-      box-shadow: 0 24px 60px rgba(2,6,23,0.35);
+      box-shadow: 0 24px 58px rgba(30,58,138,0.18);
     }
-    .audit-head h3 { color: #fff; }
-    .audit-copy {
-      margin: 12px 0 0;
-      max-width: 48rem;
+    .cta-shell small {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
       color: rgba(255,255,255,0.72);
-      font-size: 1rem;
-      line-height: 1.74;
     }
-    .audit-layout {
-      display: grid;
-      grid-template-columns: 360px minmax(0, 1fr);
-      gap: 24px;
-      align-items: start;
-    }
-    .glass-panel {
-      border-radius: 28px;
-      background: linear-gradient(145deg, rgba(15,23,42,0.72), rgba(2,6,23,0.82));
-      border: 1px solid rgba(255,255,255,0.06);
-      backdrop-filter: blur(20px);
-    }
-    .control-panel { padding: 26px; }
-    .control-top {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 22px;
-    }
-    .control-badge {
-      width: 40px;
-      height: 40px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: #22d3ee;
-      color: #06111f;
-      font-size: 1rem;
-      font-weight: 900;
-    }
-    .control-top span,
-    .stat-label {
-      font-size: 0.68rem;
-      font-weight: 900;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
-    }
-    .control-panel .field {
-      display: grid;
-      gap: 8px;
-      margin-bottom: 18px;
-    }
-    .control-panel input {
-      width: 100%;
-      padding: 18px 20px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.03);
-      font-size: 2rem;
-      line-height: 1;
-      font-weight: 900;
-      color: #fff;
-      outline: none;
-    }
-    .control-panel input:focus {
-      border-color: rgba(34,211,238,0.7);
-      background: rgba(34,211,238,0.06);
-    }
-    .audit-main { display: grid; gap: 22px; }
-    .hero-saving {
-      padding: 32px;
-      border-radius: 34px;
-      background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
-      border: 1px solid rgba(42,95,255,0.18);
-      min-height: 240px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .hero-saving .value-label {
-      font-size: 0.74rem;
-      font-weight: 900;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #60a5fa;
-    }
-    .hero-saving h4 {
-      margin: 0;
-      font-size: clamp(2.8rem, 6vw, 7.2rem);
-      line-height: 0.95;
-      letter-spacing: -0.06em;
-      font-style: italic;
-      color: #fff;
-      text-wrap: balance;
-    }
-    .metric-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-    .metric-card {
-      padding: 28px;
-      border-radius: 28px;
-      background: linear-gradient(145deg, rgba(15,23,42,0.66), rgba(2,6,23,0.78));
-      border: 1px solid rgba(255,255,255,0.06);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .metric-card strong {
-      display: block;
-      margin-top: 8px;
-      font-size: clamp(1.5rem, 2.6vw, 3rem);
-      line-height: 1.04;
+    .cta-shell h3 {
+      margin: 0 0 12px;
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      line-height: 1.06;
       letter-spacing: -0.05em;
-      font-style: italic;
-      color: #fff;
-    }
-    .metric-icon {
-      font-size: 1.6rem;
-      opacity: 0.3;
-      color: rgba(255,255,255,0.7);
-    }
-    .strategy-panel {
-      padding: 34px;
-      border-radius: 34px;
-      background: linear-gradient(90deg, #1e1b4b 0%, #020617 100%);
-      border: 1px solid rgba(244,63,94,0.22);
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .strategy-panel p {
-      margin: 10px 0 0;
-      max-width: 34rem;
-      color: rgba(255,255,255,0.65);
-      font-size: 1rem;
-      line-height: 1.72;
-      font-style: italic;
-    }
-    .strategy-panel h4 {
-      margin: 0;
-      font-size: clamp(2.6rem, 6vw, 6.8rem);
-      line-height: 0.92;
-      letter-spacing: -0.06em;
-      font-style: italic;
-      color: #fb7185;
       text-wrap: balance;
     }
-    .download-wrap { display: flex; justify-content: center; padding-top: 6px; }
-    .download-btn {
-      position: relative;
-      min-height: 78px;
-      width: min(100%, 420px);
-      padding: 0 34px;
-      border: 0;
-      border-radius: 999px;
-      background: linear-gradient(180deg, #ff4c73 0%, #f43f5e 100%);
-      color: #fff;
-      font-size: 0.86rem;
-      font-weight: 900;
-      letter-spacing: 0.42em;
-      text-transform: uppercase;
-      box-shadow: 0 30px 70px rgba(244,63,94,0.30), 0 0 60px rgba(244,63,94,0.18);
-      transition: 180ms ease;
-    }
-    .download-btn:hover { transform: translateY(-1px); background: linear-gradient(180deg, #ff5a7d 0%, #ef3354 100%); }
-    .download-btn:disabled {
-      opacity: 0.72;
-      cursor: wait;
-      transform: none;
+    .cta-shell p {
+      margin: 0;
+      max-width: 40rem;
+      color: rgba(255,255,255,0.82);
+      font-size: 1.02rem;
+      line-height: 1.84;
     }
 
-    .pdf-stage {
-      position: absolute;
-      left: -99999px;
-      top: 0;
-      width: 0;
-      height: 0;
-      overflow: hidden;
+    footer { padding: 28px 0 38px; }
+    .foot {
+      padding-top: 20px;
+      border-top: 1px solid rgba(17,24,39,0.08);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #667389;
+      font-size: 0.88rem;
     }
 
-    /* Truncated for preview: user asked to use this HTML directly */
+    @media (max-width: 1080px) {
+      .nav, .header-actions .btn-secondary { display: none; }
+      .menu-toggle { display: inline-block; }
+      .mobile-nav.show { display: block; }
+      .hero-grid,
+      .solution-grid,
+      .proof-grid,
+      .flow-grid,
+      .value-grid,
+      .cta-shell { grid-template-columns: 1fr; }
+      .section-head { display: grid; grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 780px) {
+      .wrap { width: min(calc(100% - 24px), var(--max)); }
+      .header-row { min-height: 84px; }
+      .brand { gap: 12px; }
+      .logo-card { width: 58px; height: 58px; }
+      .brand-wordmark { font-size: clamp(1.8rem, 8vw, 2.4rem); white-space: normal; }
+      .brand-tagline { white-space: normal; line-height: 1.28; font-size: 0.68rem; }
+      .hero { padding: 28px 0 70px; }
+      h1 { max-width: 100%; font-size: clamp(2.05rem, 8.8vw, 3rem); line-height: 1.02; }
+      .hero-sub { font-size: 1rem; line-height: 1.74; }
+      .hero-points,
+      .value-grid,
+      .solution-grid,
+      .proof-grid,
+      .flow-grid { grid-template-columns: 1fr; }
+      .value-band,
+      .solution-shell,
+      .flow-shell,
+      .proof-shell,
+      .cta-shell,
+      .media-card { padding: 20px; border-radius: 24px; }
+      .media-window { border-radius: 20px; aspect-ratio: 4 / 5; }
+      .btn { width: 100%; }
+      .hero-actions { display: grid; grid-template-columns: 1fr; }
+      .section { padding: 0 0 72px; }
+      .section-title { max-width: 100%; font-size: clamp(1.5rem, 7vw, 2rem); }
+      .foot { font-size: 0.8rem; }
+      .mobile-wa-fab { display: inline-flex; }
+    }
   </style>
 </head>
 <body>
@@ -878,24 +630,26 @@
         </a>
 
         <nav class="nav" aria-label="Primary">
-          <a href="#pain-points">Pain Points</a>
-          <a href="#invila-solution">Solutions</a>
-          <a href="#visit-factory">Visit Factory</a>
-          <a href="#faq">FAQ</a>
+          <a href="#why">Why Zero Capex</a>
+          <a href="#solution">Solutions</a>
+          <a href="#flow">How It Works</a>
+          <a href="#proof">ROI &amp; Impact</a>
+          <a href="#next-step">Next Step</a>
         </nav>
 
         <div class="header-actions">
-          <a class="btn btn-secondary" href="#contact">Request Assessment</a>
+          <a class="btn btn-secondary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20membahas%20kebutuhan%20air%20industri%20kami." target="_blank" rel="noopener">Chat WhatsApp</a>
           <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span></button>
         </div>
       </div>
 
       <div class="mobile-nav" id="mobileNav">
         <div class="mobile-card">
-          <a href="#pain-points">Pain Points</a>
-          <a href="#invila-solution">Solutions</a>
-          <a href="#visit-factory">Visit Factory</a>
-          <a href="#faq">FAQ</a>
+          <a href="#why">Why Zero Capex</a>
+          <a href="#solution">Solutions</a>
+          <a href="#flow">How It Works</a>
+          <a href="#proof">ROI &amp; Impact</a>
+          <a href="#next-step">Next Step</a>
         </div>
       </div>
     </div>
@@ -906,38 +660,150 @@
       <div class="wrap hero-grid">
         <div>
           <div class="eyebrow"><span class="eyebrow-dot"></span>Industrial Water-as-a-Service · Zero Capex Infrastructure</div>
-          <h1><span class="headline-break">Bangun Infrastruktur Air Industri</span><span class="headline-break">Tanpa Beban CapEx di Awal,</span><span class="accent">Dengan Keandalan yang Siap Menopang Operasi.</span></h1>
-          <p class="hero-sub">Invila™ membantu pabrik meningkatkan reliability air proses dengan model Industrial Water-as-a-Service dan Zero Capex Infrastructure, sehingga keputusan investasi, kestabilan operasi, dan kesiapan kepatuhan bisa ditangani dalam satu pendekatan yang lebih terukur.</p>
+          <h1>Kurangi beban capex instalasi air industri <span class="accent">tanpa ganggu operasional pabrik.</span></h1>
+          <p class="hero-sub">Invila™ membantu industri mengelola kebutuhan air proses dengan model yang lebih ringan secara finansial dan lebih terukur secara operasional, sehingga keputusan investasi, reliability sistem, dan kesiapan ekspansi dapat dibahas dalam satu kerangka yang lebih matang.</p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20konsultasi%20tentang%20Zero%20Capex%20Water%20Infrastructure%20Invila." target="_blank" rel="noopener">Konsultasi via WhatsApp</a>
-            <a class="btn btn-secondary" href="#visit-factory">Jadwalkan Visit Factory</a>
+            <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20menjadwalkan%20diskusi%20tentang%20kebutuhan%20air%20industri%20kami." target="_blank" rel="noopener">Jadwalkan Diskusi</a>
+            <a class="btn btn-secondary" href="#next-step">Konsultasikan Kebutuhan Pabrik Anda</a>
           </div>
 
-          <div class="hero-footnote">Untuk pabrik yang membutuhkan reliable supply, predictable cost, dan minim gangguan operasional.</div>
+          <div class="hero-footnote">Dirancang untuk membantu perusahaan industri mengambil keputusan utilitas air secara lebih tenang, strategis, dan bertahap.</div>
+
+          <div class="hero-points">
+            <div class="hero-point"><small>Tanpa investasi awal besar</small><p>Model proyek lebih ringan untuk cash flow dan prioritas capex perusahaan.</p></div>
+            <div class="hero-point"><small>Monitoring real-time</small><p>Visibilitas operasional lebih jelas untuk reliability dan pengambilan keputusan.</p></div>
+            <div class="hero-point"><small>Mendukung target ESG</small><p>Pendekatan lebih terukur untuk efisiensi, kontrol, dan kesiapan compliance.</p></div>
+            <div class="hero-point"><small>Cocok untuk ekspansi</small><p>Infrastruktur air dapat disiapkan mengikuti pertumbuhan kebutuhan kapasitas pabrik.</p></div>
+          </div>
         </div>
 
-        <div class="media-card" id="video-proof">
+        <div class="media-card">
           <div class="media-top">
-            <div class="media-label">Operational Reliability</div>
-            <div style="font-size:0.78rem;font-weight:800;letter-spacing:0.10em;text-transform:uppercase;color:#6b7588;">System &amp; Site Proof</div>
+            <div class="media-label">Industrial Proof</div>
+            <div style="font-size:0.76rem;font-weight:800;letter-spacing:0.10em;text-transform:uppercase;color:#6b7280;">Facility &amp; Monitoring</div>
           </div>
           <div class="media-window">
             <video autoplay muted loop playsinline preload="metadata" aria-label="Engineered Water Infrastructure video proof">
               <source src="./kiw-1.mp4" type="video/mp4" />
               Browser Anda tidak mendukung pemutaran video.
             </video>
-            <div class="media-executive-overlay" id="mediaExecutiveOverlay">
+            <div class="media-executive-overlay">
               <div>
                 <small>Operational Snapshot</small>
-                <strong>Reliable system visibility to support continuity, compliance readiness, and faster response.</strong>
+                <strong>Fasilitas yang rapi, sistem yang modern, dan visibilitas yang mendukung keputusan operasional.</strong>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <section class="section" id="why">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Why Zero Capex</p>
+            <h2 class="section-title">Ketika kebutuhan sistem sudah jelas, hambatannya sering kali ada di struktur investasi.</h2>
+          </div>
+          <p class="section-copy">Banyak pabrik mengetahui bahwa sistem air proses perlu ditingkatkan, tetapi keputusan tertahan karena capex awal terlalu besar, risiko implementasi belum cukup jelas, atau tim internal perlu waktu lebih panjang untuk menyelaraskan finance dan operasional.</p>
+        </div>
+        <div class="value-band">
+          <div class="value-grid">
+            <div class="value-item"><small>Financial Relief</small><p>Mengurangi tekanan investasi awal tanpa mengabaikan kebutuhan operasional yang sudah mendesak.</p></div>
+            <div class="value-item"><small>Reliability Focus</small><p>Menjaga continuity sistem air proses agar gangguan utilitas tidak berkembang menjadi gangguan produksi.</p></div>
+            <div class="value-item"><small>Strategic Visibility</small><p>Membantu manajemen melihat kebutuhan air proses sebagai keputusan bisnis, bukan hanya isu teknis.</p></div>
+            <div class="value-item"><small>Implementation Support</small><p>Memberi rasa aman karena pendekatan mencakup desain, implementasi, monitoring, dan dukungan jangka lanjut.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="solution">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Solutions</p>
+            <h2 class="section-title">Solusi yang dibuat untuk mudah dipahami oleh pengambil keputusan.</h2>
+          </div>
+          <p class="section-copy">Alih-alih membanjiri halaman dengan istilah teknis, Invila™ memosisikan solusi sebagai tiga area kerja yang paling relevan bagi CEO, finance, plant, dan environment team.</p>
+        </div>
+        <div class="solution-shell">
+          <div class="solution-grid">
+            <article class="solution-item"><small>Design & Build</small><h3>Solusi dirancang berdasarkan kondisi aktual pabrik.</h3><p>Analisa kebutuhan, kapasitas, dan kondisi eksisting digunakan untuk membangun pendekatan yang relevan, bukan template generik.</p></article>
+            <article class="solution-item"><small>Operate & Maintain</small><h3>Kinerja sistem dijaga sebagai bagian dari layanan.</h3><p>Fokusnya bukan sekadar selesai pasang, tetapi memastikan sistem berjalan lebih stabil dan lebih siap menopang operasi harian.</p></article>
+            <article class="solution-item"><small>Monitor & Optimize</small><h3>Data digunakan untuk membantu keputusan yang lebih cepat dan terukur.</h3><p>Monitoring dan evaluasi berkelanjutan membantu perusahaan melihat potensi efisiensi, reliability, dan arah perbaikan berikutnya.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proof">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">ROI &amp; Impact</p>
+            <h2 class="section-title">Angka dan manfaat bisnis harus cepat ditemukan.</h2>
+          </div>
+          <p class="section-copy">Section ini dibuat sangat cepat dibaca, karena pengambil keputusan biasanya ingin segera melihat dampak yang paling relevan sebelum tertarik masuk ke diskusi lebih dalam.</p>
+        </div>
+        <div class="proof-shell">
+          <div class="proof-grid">
+            <article class="proof-card"><small>Biaya</small><h3>Model tanpa capex besar di awal</h3><p>Membantu perusahaan mempertimbangkan peningkatan sistem tanpa harus menunggu struktur investasi konvensional.</p></article>
+            <article class="proof-card"><small>Operasional</small><h3>Reliability sistem lebih mudah dijaga</h3><p>Visibilitas monitoring dan pendekatan operasi yang terstruktur membantu mengurangi risiko gangguan utilitas.</p></article>
+            <article class="proof-card"><small>Compliance</small><h3>Mendukung readiness lingkungan</h3><p>Perusahaan memiliki dasar yang lebih baik untuk menjaga efisiensi, kontrol, dan konsistensi pengelolaan air proses.</p></article>
+            <article class="proof-card"><small>Ekspansi</small><h3>Lebih siap mengikuti pertumbuhan kapasitas</h3><p>Pendekatan sistem dapat diarahkan untuk menjawab kebutuhan pabrik yang berkembang, bukan hanya kebutuhan saat ini.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="flow">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">How It Works</p>
+            <h2 class="section-title">Alur yang jelas, singkat, dan tidak membingungkan.</h2>
+          </div>
+          <p class="section-copy">Landing page yang baik harus memandu, bukan membingungkan. Karena itu alurnya dibuat sederhana: masalah, solusi, cara kerja, bukti teknis, lalu langkah berikutnya.</p>
+        </div>
+        <div class="flow-shell">
+          <div class="flow-grid">
+            <article class="flow-card"><small>Step 01</small><h3>Pahami kebutuhan</h3><p>Diskusi awal untuk menangkap target operasi, biaya, reliability, dan prioritas perusahaan.</p></article>
+            <article class="flow-card"><small>Step 02</small><h3>Assessment lokasi</h3><p>Visit factory membantu melihat kondisi aktual, risiko utilitas, dan peluang perbaikan yang layak dipertimbangkan.</p></article>
+            <article class="flow-card"><small>Step 03</small><h3>Susun pendekatan</h3><p>Solusi dipetakan sesuai konteks pabrik, termasuk aspek teknis, finansial, dan implementasi.</p></article>
+            <article class="flow-card"><small>Step 04</small><h3>Implementasi bertahap</h3><p>Pelaksanaan dirancang agar tetap memperhatikan kelangsungan operasional dan kebutuhan koordinasi internal.</p></article>
+            <article class="flow-card"><small>Step 05</small><h3>Monitoring &amp; support</h3><p>Tim mendapatkan dukungan visibilitas dan pengawalan setelah sistem berjalan.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="next-step">
+      <div class="wrap">
+        <div class="cta-shell">
+          <div>
+            <small>Next Step</small>
+            <h3>Kalau halaman ini membuat Anda merasa “ini layak saya minta tim lihat lebih lanjut”, maka langkah berikutnya cukup sederhana.</h3>
+            <p>Mulai dari percakapan yang tenang dan profesional. Bahas kebutuhan air industri Anda, selaraskan dengan target operasional dan finansial, lalu tentukan apakah visit factory atau diskusi lanjutan memang relevan untuk tahap berikutnya.</p>
+          </div>
+          <div>
+            <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20bahas%20kebutuhan%20air%20industri%20kami." target="_blank" rel="noopener">Bahas Kebutuhan Air Industri Anda via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div><span class="brand-inline">Invila<sup>™</sup></span> — PT. Invila Tirta Nusantara</div>
+      <div>Sentra Niaga 2 No. 5 Harapan Indah, Bekasi 17131, Jawa Barat</div>
+      <div>WhatsApp: Irfon Desman · 085219493322</div>
+    </div>
+  </footer>
+
+  <a class="mobile-wa-fab" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20bahas%20kebutuhan%20air%20industri%20kami." target="_blank" rel="noopener" aria-label="Hubungi via WhatsApp">WhatsApp</a>
 
   <script>
     const siteHeader = document.getElementById('siteHeader');
@@ -954,6 +820,13 @@
     menuToggle?.addEventListener('click', () => {
       menuToggle.classList.toggle('open');
       mobileNav.classList.toggle('show');
+    });
+
+    mobileNav?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('show');
+        menuToggle.classList.remove('open');
+      });
     });
   </script>
 </body>
