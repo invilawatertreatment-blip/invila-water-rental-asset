@@ -235,80 +235,75 @@
       text-transform: uppercase;
     }
 
-    .hero { padding: 54px 0 88px; }
+    .hero { padding: 46px 0 82px; }
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
-      gap: 48px;
-      align-items: center;
-    }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 11px 16px;
-      border-radius: var(--pill);
-      border: 1px solid rgba(34,87,216,0.14);
-      background: rgba(255,255,255,0.92);
-      box-shadow: 0 10px 20px rgba(15,23,42,0.04);
-      font-size: 0.7rem;
-      font-weight: 900;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--brand);
-    }
-    .eyebrow-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--brand);
-      box-shadow: 0 0 0 6px rgba(34,87,216,0.10);
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.82fr);
+      gap: 42px;
+      align-items: start;
     }
     h1 {
-      margin: 24px 0 0;
-      max-width: 12ch;
-      font-size: clamp(2.8rem, 5.6vw, 5.25rem);
-      line-height: 0.96;
-      letter-spacing: -0.07em;
+      margin: 14px 0 0;
+      max-width: 12.5ch;
+      font-size: clamp(2.55rem, 4.55vw, 4.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
       font-weight: 900;
       color: #0f172a;
-      text-wrap: balance;
-    }
-    h1 .accent { color: var(--brand); display: block; margin-top: 0.12em; }
-    .hero-sub {
-      margin: 24px 0 0;
-      max-width: 41rem;
-      font-size: 1.06rem;
-      line-height: 1.88;
-      color: var(--muted);
       text-wrap: pretty;
     }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+    h1 .accent {
+      color: var(--brand);
+      display: inline;
+      margin-top: 0;
+    }
+    .hero-sub {
+      margin: 24px 0 0;
+      max-width: 44rem;
+      font-size: clamp(1rem, 1.12vw, 1.06rem);
+      line-height: 1.82;
+      color: var(--muted);
+      text-wrap: pretty;
+      font-weight: 500;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+    .hero-actions .btn {
+      min-width: 0;
+      padding-left: 22px;
+      padding-right: 22px;
+    }
     .hero-footnote {
       display: flex;
       align-items: center;
       gap: 12px;
-      margin-top: 20px;
-      font-size: 0.95rem;
+      margin-top: 18px;
+      font-size: 0.92rem;
       color: #6b7280;
       font-weight: 600;
+      max-width: 46rem;
     }
     .hero-footnote::before {
       content: "";
       width: 28px;
       height: 1px;
       background: rgba(17,24,39,0.16);
+      flex: 0 0 auto;
     }
 
     .hero-points {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
-      margin-top: 34px;
+      margin-top: 30px;
       max-width: 860px;
     }
     .hero-point {
-      padding: 20px;
+      padding: 18px 18px 16px;
       border-radius: var(--radius-lg);
       background: rgba(255,255,255,0.86);
       border: 1px solid var(--line);
@@ -316,8 +311,8 @@
     }
     .hero-point small {
       display: block;
-      margin-bottom: 10px;
-      font-size: 0.68rem;
+      margin-bottom: 8px;
+      font-size: 0.66rem;
       font-weight: 900;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -325,34 +320,35 @@
     }
     .hero-point p {
       margin: 0;
-      font-size: 0.98rem;
-      line-height: 1.6;
+      font-size: 0.94rem;
+      line-height: 1.58;
       color: #172033;
       font-weight: 650;
     }
 
     .media-card {
       position: relative;
-      padding: 18px;
+      padding: 16px;
       border-radius: var(--radius-xl);
       background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.90));
       border: 1px solid rgba(255,255,255,0.92);
       box-shadow: var(--shadow);
       overflow: hidden;
+      margin-top: 10px;
     }
     .media-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       padding: 2px 2px 0;
     }
     .media-label {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 900;
       letter-spacing: 0.13em;
       text-transform: uppercase;
@@ -369,10 +365,11 @@
     .media-window {
       position: relative;
       overflow: hidden;
-      border-radius: 24px;
+      border-radius: 22px;
       border: 1px solid rgba(17,24,39,0.08);
       background: #dfe7f6;
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 16 / 11;
+      min-height: 420px;
     }
     .media-window video {
       width: 100%;
@@ -382,20 +379,20 @@
     }
     .media-executive-overlay {
       position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
       display: grid;
       gap: 8px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: linear-gradient(180deg, rgba(9,16,32,0.08), rgba(9,16,32,0.68));
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(9,16,32,0.08), rgba(9,16,32,0.64));
       color: #fff;
       backdrop-filter: blur(5px);
     }
     .media-executive-overlay small {
       display: block;
-      font-size: 0.64rem;
+      font-size: 0.62rem;
       font-weight: 900;
       letter-spacing: 0.15em;
       text-transform: uppercase;
@@ -403,9 +400,9 @@
     }
     .media-executive-overlay strong {
       display: block;
-      max-width: 26ch;
-      font-size: 1.06rem;
-      line-height: 1.32;
+      max-width: 28ch;
+      font-size: 1rem;
+      line-height: 1.34;
       letter-spacing: -0.02em;
       color: #fff;
     }
@@ -586,6 +583,8 @@
       .value-grid,
       .cta-shell { grid-template-columns: 1fr; }
       .section-head { display: grid; grid-template-columns: 1fr; }
+      .hero-grid { gap: 28px; }
+      .media-card { margin-top: 0; }
     }
 
     @media (max-width: 780px) {
@@ -595,9 +594,17 @@
       .logo-card { width: 64px; height: 64px; }
       .brand-wordmark { font-size: clamp(2.1rem, 10vw, 2.8rem); white-space: normal; }
       .brand-tagline { white-space: normal; line-height: 1.22; font-size: 0.88rem; letter-spacing: 0.03em; }
-      .hero { padding: 28px 0 70px; }
-      h1 { max-width: 100%; font-size: clamp(2.05rem, 8.8vw, 3rem); line-height: 1.02; }
-      .hero-sub { font-size: 1rem; line-height: 1.74; }
+      .hero { padding: 26px 0 64px; }
+      h1 {
+        max-width: 100%;
+        font-size: clamp(2.05rem, 8.2vw, 3rem);
+        line-height: 1.02;
+      }
+      .hero-sub {
+        font-size: 0.98rem;
+        line-height: 1.72;
+        max-width: 100%;
+      }
       .hero-points,
       .value-grid,
       .solution-grid,
@@ -609,7 +616,11 @@
       .proof-shell,
       .cta-shell,
       .media-card { padding: 20px; border-radius: 24px; }
-      .media-window { border-radius: 20px; aspect-ratio: 4 / 5; }
+      .media-window {
+        border-radius: 20px;
+        aspect-ratio: 4 / 5;
+        min-height: 300px;
+      }
       .btn { width: 100%; }
       .hero-actions { display: grid; grid-template-columns: 1fr; }
       .section { padding: 0 0 72px; }
@@ -660,8 +671,10 @@
   <main id="top">
     <section class="hero">
       <div class="wrap hero-grid">
-        <div><h1>Kurangi beban capex instalasi air industri <span class="accent">tanpa ganggu operasional pabrik.</span></h1>
-          <p class="hero-sub">Invila™ membantu industri mengelola kebutuhan air proses dengan model yang lebih ringan secara finansial dan lebih terukur secara operasional, sehingga keputusan investasi, reliability sistem, dan kesiapan ekspansi dapat dibahas dalam satu kerangka yang lebih matang.</p>
+        <div>
+          <p class="section-kicker">Industrial Water Infrastructure Partner</p>
+          <h1>Membangun 78 Juta m³/Tahun Infrastruktur Air di Indonesia. <span class="accent">Kini, Kami Berinvestasi untuk Pabrik Anda.</span></h1>
+          <p class="hero-sub">Berbekal portofolio melayani publik dan industri, Skema Zero Capex Invila™ menjamin pasokan air absolut yang langsung terkonversi menjadi penghematan nyata pada hari pertama.</p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20menjadwalkan%20diskusi%20tentang%20kebutuhan%20air%20industri%20kami." target="_blank" rel="noopener">Jadwalkan Diskusi</a>
