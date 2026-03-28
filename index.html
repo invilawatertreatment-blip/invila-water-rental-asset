@@ -76,8 +76,8 @@
       min-width: 0;
     }
     .logo-card {
-      width: 74px;
-      height: 74px;
+      width: 96px;
+      height: 96px;
       display: grid;
       place-items: center;
       flex: 0 0 auto;
@@ -85,22 +85,23 @@
     .logo-card img {
       width: 100%;
       height: auto;
-      filter: drop-shadow(0 10px 22px rgba(34,87,216,0.14));
+      object-fit: contain;
+      filter: none;
     }
     .brand-lockup {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
       min-width: 0;
       line-height: 1;
     }
     .brand-wordmark {
       margin: 0;
-      font-size: clamp(2rem, 3.3vw, 3rem);
+      font-size: clamp(3rem, 5.6vw, 5rem);
       font-weight: 700;
-      line-height: 0.92;
-      letter-spacing: -0.05em;
-      color: #0f172a;
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+      color: #0b1020;
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -109,22 +110,23 @@
       vertical-align: super;
       position: relative;
       top: -0.08em;
-      margin-left: 0.04em;
+      margin-left: 0.05em;
     }
     .brand-tagline {
       margin: 0;
-      font-size: clamp(0.72rem, 1vw, 0.88rem);
+      font-size: clamp(0.95rem, 1.4vw, 1.5rem);
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--brand);
       white-space: nowrap;
     }
     .brand-tagline .sub {
       color: #111827;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.02em;
       text-transform: none;
-      margin-left: 0.16em;
+      margin-left: 0.18em;
+      font-weight: 600;
     }
 
     .nav { display: flex; align-items: center; gap: 2px; }
@@ -589,10 +591,10 @@
     @media (max-width: 780px) {
       .wrap { width: min(calc(100% - 24px), var(--max)); }
       .header-row { min-height: 84px; }
-      .brand { gap: 12px; }
-      .logo-card { width: 58px; height: 58px; }
-      .brand-wordmark { font-size: clamp(1.8rem, 8vw, 2.4rem); white-space: normal; }
-      .brand-tagline { white-space: normal; line-height: 1.28; font-size: 0.68rem; }
+      .brand { gap: 12px; align-items: flex-start; }
+      .logo-card { width: 64px; height: 64px; }
+      .brand-wordmark { font-size: clamp(2.1rem, 10vw, 2.8rem); white-space: normal; }
+      .brand-tagline { white-space: normal; line-height: 1.22; font-size: 0.88rem; letter-spacing: 0.03em; }
       .hero { padding: 28px 0 70px; }
       h1 { max-width: 100%; font-size: clamp(2.05rem, 8.8vw, 3rem); line-height: 1.02; }
       .hero-sub { font-size: 1rem; line-height: 1.74; }
@@ -625,7 +627,7 @@
           <div class="logo-card" aria-hidden="true"><img src="./logo-invila.png" alt="Invila logo" /></div>
           <div class="brand-lockup">
             <p class="brand-wordmark">Invila<sup>™</sup></p>
-            <p class="brand-tagline">Zero Capex Water Infrastructure <span class="sub">for Industry</span></p>
+            <p class="brand-tagline">Water as a Service <span class="sub">(W a a S)</span></p>
           </div>
         </a>
 
@@ -658,9 +660,7 @@
   <main id="top">
     <section class="hero">
       <div class="wrap hero-grid">
-        <div>
-          <div class="eyebrow"><span class="eyebrow-dot"></span>Industrial Water-as-a-Service · Zero Capex Infrastructure</div>
-          <h1>Kurangi beban capex instalasi air industri <span class="accent">tanpa ganggu operasional pabrik.</span></h1>
+        <div><h1>Kurangi beban capex instalasi air industri <span class="accent">tanpa ganggu operasional pabrik.</span></h1>
           <p class="hero-sub">Invila™ membantu industri mengelola kebutuhan air proses dengan model yang lebih ringan secara finansial dan lebih terukur secara operasional, sehingga keputusan investasi, reliability sistem, dan kesiapan ekspansi dapat dibahas dalam satu kerangka yang lebih matang.</p>
 
           <div class="hero-actions">
