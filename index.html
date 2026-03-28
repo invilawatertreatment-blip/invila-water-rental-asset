@@ -120,9 +120,9 @@
     }
     .brand-tagline {
       margin: 0;
-      font-size: clamp(0.8rem, 1vw, 1.04rem);
+      font-size: clamp(0.78rem, 0.92vw, 0.94rem);
       font-weight: 700;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.02em;
       text-transform: uppercase;
       color: var(--brand);
       white-space: nowrap;
@@ -138,28 +138,33 @@
     .nav {
       display: flex;
       align-items: center;
-      gap: 2px;
+      gap: 0;
       flex: 1 1 auto;
       justify-content: center;
       min-width: 0;
     }
     .nav a {
-      padding: 10px 10px;
+      padding: 10px 8px;
       border-radius: var(--pill);
-      font-size: 0.7rem;
+      font-size: 0.67rem;
       font-weight: 800;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.045em;
       text-transform: uppercase;
       color: #6b7280;
       transition: 180ms ease;
       white-space: nowrap;
     }
     .nav a:hover { background: var(--brand-soft); color: var(--brand); }
+    .nav a + a::before {
+      content: "|";
+      color: #cbd5e1;
+      margin-right: 8px;
+    }
 
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       flex: 0 0 auto;
     }
     .menu-toggle {
@@ -190,13 +195,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 0 18px;
+      min-height: 46px;
+      padding: 0 16px;
       border-radius: var(--pill);
       border: 1px solid transparent;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 800;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       white-space: nowrap;
       transition: 180ms ease;
@@ -232,6 +237,14 @@
       font-size: 0.8rem;
       font-weight: 800;
       color: #5f6b7a;
+    }
+    .mobile-card a:first-child {
+      background: linear-gradient(135deg, var(--brand), #4e79e6);
+      color: #fff;
+    }
+    .mobile-card a:nth-child(2) {
+      background: rgba(34,87,216,0.08);
+      color: var(--brand);
     }
     .mobile-card a:last-child {
       background: linear-gradient(135deg, var(--brand), #4e79e6);
@@ -838,7 +851,7 @@
         white-space: nowrap;
       }
       .brand-tagline {
-        font-size: 0.58rem;
+        font-size: 0.54rem;
         line-height: 1.1;
         letter-spacing: 0.01em;
         white-space: nowrap;
@@ -1072,13 +1085,13 @@
 
       <div class="mobile-nav" id="mobileNav">
         <div class="mobile-card">
+          <a href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20membahas%20kebutuhan%20air%20industri%20kami." target="_blank" rel="noopener">Chat WhatsApp</a>
+          <a href="#proof">Hitung Savings</a>
           <a href="#why">Kenapa Zero Capex</a>
           <a href="#solution">Solusi Invila™</a>
           <a href="#flow">Cara Kerja</a>
           <a href="#proof">Dampak Bisnis</a>
           <a href="#next-step">Mulai Assessment</a>
-          <a href="#proof">Hitung Savings</a>
-          <a href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20membahas%20kebutuhan%20air%20industri%20kami." target="_blank" rel="noopener">Chat WhatsApp</a>
         </div>
       </div>
     </div>
