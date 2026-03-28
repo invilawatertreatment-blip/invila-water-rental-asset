@@ -86,6 +86,33 @@
       min-height: 76px;
     }
     .site-header.scrolled .logo-card {
+      width: 68px;
+      height: 68px;
+      border-radius: 18px;
+    }
+    .site-header.scrolled .brand-wordmark {
+      transform: scale(0.94);
+      transform-origin: left center;
+    }
+    .site-header.scrolled .brand-tagline {
+      opacity: 0.88;
+    }
+
+    .header-row {
+      min-height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-width: 0;
+      flex: 0 1 auto;
+    }
+    .logo-card {
       width: 84px;
       height: 84px;
       display: grid;
@@ -98,6 +125,12 @@
       font-size: 1.2rem;
       box-shadow: 0 10px 24px rgba(42,95,255,0.10);
       overflow: hidden;
+    }
+    .logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
     }
     .brand-lockup {
       display: flex;
@@ -139,7 +172,13 @@
       margin-left: 0.18em;
     }
 
-    .nav { display: flex; align-items: center; gap: 2px; }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      margin-left: auto;
+      flex: 0 0 auto;
+    }
     .nav a {
       padding: 10px 12px;
       border-radius: var(--pill);
@@ -152,7 +191,11 @@
     }
     .nav a:hover { background: var(--brand-soft); color: var(--brand); }
 
-    .header-actions { display: flex; align-items: center; }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+    }
     .menu-toggle {
       display: none;
       width: 48px;
@@ -622,6 +665,13 @@
       .nav { display: none; }
       .menu-toggle { display: inline-block; }
       .mobile-nav.show { display: block; }
+      .header-row {
+        min-height: 88px;
+        gap: 16px;
+      }
+      .brand {
+        flex: 1 1 auto;
+      }
       .hero-grid,
       .solution-grid,
       .audit-layout,
@@ -644,8 +694,19 @@
 
     @media (max-width: 780px) {
       .wrap { width: min(calc(100% - 22px), var(--max)); }
-      .header-row { min-height: 82px; gap: 12px; }
-      .logo-card { width: 58px; height: 58px; }
+      .header-row {
+        min-height: 82px;
+        gap: 12px;
+      }
+      .brand {
+        gap: 10px;
+        align-items: center;
+      }
+      .logo-card {
+        width: 58px;
+        height: 58px;
+        border-radius: 16px;
+      }
       .brand-wordmark {
         font-size: clamp(1.7rem, 8vw, 2.4rem);
         white-space: normal;
