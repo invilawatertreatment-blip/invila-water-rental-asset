@@ -8,8 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Serif:wght@700;800&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
     :root {
       --ink: #10182b;
@@ -53,6 +51,23 @@
     .brand-tagline,
     .brand-inline { font-family: "Noto Serif", Georgia, "Times New Roman", serif; }
 
+    .section-kicker {
+      margin: 0 0 10px;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+    .section-kicker-light {
+      margin: 0 0 10px;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #60a5fa;
+    }
+
     .site-header {
       position: sticky;
       top: 0;
@@ -71,44 +86,6 @@
       min-height: 76px;
     }
     .site-header.scrolled .logo-card {
-      width: 68px;
-      height: 68px;
-      border-radius: 18px;
-    }-items: center;
-      flex: 0 0 auto;
-      border-radius: 20px;
-      background: linear-gradient(135deg, rgba(42,95,255,0.10), rgba(42,95,255,0.02));
-      box-shadow: 0 10px 24px rgba(42,95,255,0.10);
-      overflow: hidden;
-    }
-    .logo-img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-    .site-header.scrolled .brand-wordmark {
-      transform: scale(0.94);
-      transform-origin: left center;
-    }
-    .site-header.scrolled .brand-tagline {
-      opacity: 0.88;
-    }
-    .header-row {
-      min-height: 96px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      min-width: 0;
-    }
-    .logo-card {
       width: 84px;
       height: 84px;
       display: grid;
@@ -120,6 +97,7 @@
       font-weight: 900;
       font-size: 1.2rem;
       box-shadow: 0 10px 24px rgba(42,95,255,0.10);
+      overflow: hidden;
     }
     .brand-lockup {
       display: flex;
@@ -174,7 +152,7 @@
     }
     .nav a:hover { background: var(--brand-soft); color: var(--brand); }
 
-    .header-actions { display: flex; align-items: center; gap: 12px; }
+    .header-actions { display: flex; align-items: center; }
     .menu-toggle {
       display: none;
       width: 48px;
@@ -385,12 +363,15 @@
       border: 1px solid rgba(16,24,43,0.08);
       background: linear-gradient(135deg, #dbeafe, #eff6ff);
       min-height: 520px;
-      display: grid;
-      place-items: center;
-      color: #1d4ed8;
-      font-weight: 800;
-      text-align: center;
-      padding: 24px;
+    }
+    .media-window video {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      background: #dbeafe;
     }
 
     .section { padding: 0 0 100px; }
@@ -638,7 +619,7 @@
     }
 
     @media (max-width: 1080px) {
-      .nav, .header-actions .btn-secondary { display: none; }
+      .nav { display: none; }
       .menu-toggle { display: inline-block; }
       .mobile-nav.show { display: block; }
       .hero-grid,
@@ -707,6 +688,7 @@
       .metric-card,
       .strategy-panel { padding: 18px; border-radius: 22px; }
       .media-window { min-height: 260px; aspect-ratio: 4 / 5; }
+      .media-window video { min-height: 260px; }
       .btn { width: 100%; min-height: 52px; padding: 0 18px; font-size: 0.73rem; }
       .hero-actions,
       .visit-actions { display: grid; grid-template-columns: 1fr; }
@@ -763,8 +745,8 @@
           <p class="hero-sub">Invila™ membantu pabrik meningkatkan reliability air proses dengan model Industrial Water-as-a-Service dan Zero Capex Infrastructure, sehingga keputusan investasi, kestabilan operasi, dan kesiapan kepatuhan bisa ditangani dalam satu pendekatan yang lebih terukur.</p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#">Konsultasi via WhatsApp</a>
-            <a class="btn btn-secondary" href="#visit-factory">Jadwalkan Visit Factory</a>
+            <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20konsultasi%20tentang%20Zero%20Capex%20Water%20Infrastructure%20Invila." target="_blank" rel="noopener">Konsultasi via WhatsApp</a>
+            <a class="btn btn-secondary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20menjadwalkan%20visit%20factory%20dengan%20tim%20Invila." target="_blank" rel="noopener">Jadwalkan Visit Factory</a>
           </div>
 
           <div class="hero-footnote">Untuk pabrik yang membutuhkan reliable supply, predictable cost, dan minim gangguan operasional.</div>
@@ -787,8 +769,29 @@
 
         <div class="media-card" id="video-proof">
           <div class="media-window">
-            Preview media area<br/>Logo/video lokal belum dimuat di canvas
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Engineered Water Infrastructure video proof">
+              <source src="./kiw-1.mp4" type="video/mp4" />
+              Browser Anda tidak mendukung pemutaran video.
+            </video>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="zero-capex-advantage">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Why Zero Capex</p>
+            <h2 class="section-title">Inilah pembeda utama dibanding vendor biasa.</h2>
+          </div>
+          <p class="section-copy">Bagi banyak pabrik, tantangan utamanya bukan hanya menemukan teknologi yang tepat, tetapi bagaimana proyek bisa bergerak tanpa menunggu beban investasi besar di awal.</p>
+        </div>
+        <div class="zero-capex-grid">
+          <article class="zero-capex-card"><small>Speed</small><h3>Proyek tidak harus menunggu alokasi investasi besar di depan.</h3><p>Keputusan bisa bergerak lebih cepat ketika tekanan CapEx awal tidak menjadi hambatan utama.</p></article>
+          <article class="zero-capex-card"><small>Risk Sharing</small><h3>Risiko desain, operasional, dan performa dikelola bersama.</h3><p>Model kemitraan membuat tanggung jawab kinerja tidak berhenti saat proyek selesai dipasang.</p></article>
+          <article class="zero-capex-card"><small>Focus</small><h3>Tim pabrik dapat lebih fokus ke core operation.</h3><p>Kompleksitas utilitas tidak perlu terus membebani perhatian manajemen dan operasional internal.</p></article>
+          <article class="zero-capex-card"><small>Predictability</small><h3>Biaya dan performa lebih mudah diarahkan ke outcome bisnis.</h3><p>Pendekatan ini membantu perusahaan menilai utilitas air sebagai instrumen efisiensi, bukan sekadar cost center.</p></article>
         </div>
       </div>
     </section>
@@ -797,7 +800,7 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <p style="color:var(--brand);font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px;">Masalah yang Mereka Rasakan</p>
+            <p class="section-kicker">Masalah yang Mereka Rasakan</p>
             <h2 class="section-title">Sebelum bicara solusi, kami mulai dari tekanan bisnis yang paling nyata dirasakan pabrik.</h2>
           </div>
           <p class="section-copy">Ketika harga air naik, kuota menurun, downtime mulai mengganggu, dan upgrade sistem terasa terlalu berat di CapEx, tantangannya bukan lagi sekadar teknis. Ini sudah menjadi isu continuity, efficiency, dan business risk.</p>
@@ -817,7 +820,7 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <p style="color:var(--brand);font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px;">Solusi Invila™</p>
+            <p class="section-kicker">Solusi Invila™</p>
             <h2 class="section-title">End-to-end water infrastructure solution yang dibuat sederhana untuk dipahami, jelas untuk dijalankan.</h2>
           </div>
           <p class="section-copy">Invila™ menyediakan end-to-end water infrastructure solution untuk pabrik yang membutuhkan reliable supply, predictable cost, dan minim gangguan operasional.</p>
@@ -836,7 +839,7 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <p style="color:var(--brand);font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px;">Cara Kerja Model Kerja Sama</p>
+            <p class="section-kicker">Cara Kerja Model Kerja Sama</p>
             <h2 class="section-title">Jelas dari awal: ini bukan sekadar kontraktor biasa, dan bukan sekadar jual alat.</h2>
           </div>
           <p class="section-copy">Model kerja sama Invila™ dirancang sebagai kemitraan jangka menengah atau panjang untuk performa air industri.</p>
@@ -855,7 +858,7 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <p style="color:var(--brand);font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px;">Nilai Bisnis</p>
+            <p class="section-kicker">Nilai Bisnis</p>
             <h2 class="section-title">Apa untungnya untuk setiap role yang terlibat dalam keputusan?</h2>
           </div>
           <p class="section-copy">Bagian ini bukan tentang jargon teknis, tetapi tentang nilai bisnis yang dicari oleh masing-masing pengambil keputusan di dalam pabrik.</p>
@@ -874,7 +877,7 @@
         <div class="audit-shell">
           <div class="section-head" style="margin-bottom:24px;">
             <div>
-              <p style="color:#60a5fa;font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px;">Intelligence Saving Audit</p>
+              <p class="section-kicker-light">Intelligence Saving Audit</p>
               <h2 class="section-title" style="color:#fff;max-width:14ch;">Panel cepat untuk memulai diskusi berbasis angka.</h2>
             </div>
             <p class="section-copy" style="color:rgba(255,255,255,.7);">Calculator ini membantu melihat gambaran awal potensi saving, nilai infrastruktur, dan arah diskusi proyek secara lebih konkret.</p>
@@ -909,8 +912,8 @@
             <h3>Tim Invila™ dapat melakukan visit factory untuk memahami kondisi aktual dan mengusulkan pendekatan yang paling relevan.</h3>
             <p>Visit factory membantu memperjelas kebutuhan awal, potensi tantangan sistem eksisting, dan arah solusi yang layak dipertimbangkan sebelum keputusan proyek dibawa lebih jauh.</p>
             <div class="visit-actions">
-              <a class="btn btn-primary" href="#">Jadwalkan Visit Factory</a>
-              <a class="btn btn-secondary" href="#">Diskusikan Kebutuhan Anda via WhatsApp</a>
+              <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20menjadwalkan%20visit%20factory%20dengan%20tim%20Invila." target="_blank" rel="noopener">Jadwalkan Visit Factory</a>
+              <a class="btn btn-secondary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20diskusi%20kebutuhan%20air%20industri%20kami." target="_blank" rel="noopener">Diskusikan Kebutuhan Anda via WhatsApp</a>
             </div>
           </div>
           <div class="visit-card">
@@ -928,7 +931,7 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <p style="color:var(--brand);font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px;">FAQ Singkat</p>
+            <p class="section-kicker">FAQ Singkat</p>
             <h2 class="section-title">Jawaban singkat untuk mengurangi keraguan sebelum klik.</h2>
           </div>
           <p class="section-copy">Bagian ini dirancang untuk menjawab pertanyaan yang biasanya muncul sebelum audiens memutuskan berdiskusi lebih lanjut.</p>
@@ -946,24 +949,7 @@
       </div>
     </section>
 
-    <section class="section" id="zero-capex-advantage">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p style="color:var(--brand);font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px;">Why Zero Capex</p>
-            <h2 class="section-title">Inilah pembeda utama dibanding vendor biasa.</h2>
-          </div>
-          <p class="section-copy">Bagi banyak pabrik, tantangan utamanya bukan hanya menemukan teknologi yang tepat, tetapi bagaimana proyek bisa bergerak tanpa menunggu beban investasi besar di awal.</p>
-        </div>
-        <div class="zero-capex-grid">
-          <article class="zero-capex-card"><small>Speed</small><h3>Proyek tidak harus menunggu alokasi investasi besar di depan.</h3><p>Keputusan bisa bergerak lebih cepat ketika tekanan CapEx awal tidak menjadi hambatan utama.</p></article>
-          <article class="zero-capex-card"><small>Risk Sharing</small><h3>Risiko desain, operasional, dan performa dikelola bersama.</h3><p>Model kemitraan membuat tanggung jawab kinerja tidak berhenti saat proyek selesai dipasang.</p></article>
-          <article class="zero-capex-card"><small>Focus</small><h3>Tim pabrik dapat lebih fokus ke core operation.</h3><p>Kompleksitas utilitas tidak perlu terus membebani perhatian manajemen dan operasional internal.</p></article>
-          <article class="zero-capex-card"><small>Predictability</small><h3>Biaya dan performa lebih mudah diarahkan ke outcome bisnis.</h3><p>Pendekatan ini membantu perusahaan menilai utilitas air sebagai instrumen efisiensi, bukan sekadar cost center.</p></article>
-        </div>
-      </div>
-    </section>
-  </main>
+    </main>
 
   <footer>
     <div class="wrap foot">
@@ -973,7 +959,7 @@
     </div>
   </footer>
 
-  <a class="mobile-wa-fab" href="#" aria-label="Hubungi via WhatsApp">
+  <a class="mobile-wa-fab" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20konsultasi%20tentang%20Zero%20Capex%20Water%20Infrastructure%20Invila." target="_blank" rel="noopener" aria-label="Hubungi via WhatsApp">
     <span class="icon">✆</span>
     <span>WhatsApp</span>
   </a>
