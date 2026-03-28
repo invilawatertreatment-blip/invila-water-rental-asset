@@ -144,21 +144,22 @@
       min-width: 0;
     }
     .nav a {
-      padding: 10px 11px;
+      padding: 10px 10px;
       border-radius: var(--pill);
-      font-size: 0.74rem;
+      font-size: 0.7rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: #6b7280;
       transition: 180ms ease;
+      white-space: nowrap;
     }
     .nav a:hover { background: var(--brand-soft); color: var(--brand); }
 
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       flex: 0 0 auto;
     }
     .menu-toggle {
@@ -189,13 +190,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 50px;
-      padding: 0 20px;
+      min-height: 48px;
+      padding: 0 18px;
       border-radius: var(--pill);
       border: 1px solid transparent;
-      font-size: 0.74rem;
+      font-size: 0.7rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       white-space: nowrap;
       transition: 180ms ease;
@@ -231,6 +232,10 @@
       font-size: 0.8rem;
       font-weight: 800;
       color: #5f6b7a;
+    }
+    .mobile-card a:last-child {
+      background: linear-gradient(135deg, var(--brand), #4e79e6);
+      color: #fff;
     }
 
     .mobile-wa-fab {
@@ -766,7 +771,7 @@
 
     @media (max-width: 1080px) {
       .nav,
-      .header-actions .btn-secondary { display: none; }
+      .header-actions .btn { display: none; }
       .menu-toggle { display: inline-block; }
       .mobile-nav.show { display: block; }
       .hero-grid,
@@ -1046,31 +1051,34 @@
           <div class="logo-card" aria-hidden="true"><img src="./logo-invila.png" alt="Invila logo" /></div>
           <div class="brand-lockup">
             <p class="brand-wordmark">Invila<sup>™</sup></p>
-            <p class="brand-tagline">Water as a Service <span class="sub">(W a a S)</span></p>
+            <p class="brand-tagline">Zero Capex Water Infrastructure for Industry</p>
           </div>
         </a>
 
         <nav class="nav" aria-label="Primary">
-          <a href="#why">Why Zero Capex</a>
-          <a href="#solution">Solutions</a>
-          <a href="#flow">How It Works</a>
-          <a href="#proof">ROI &amp; Impact</a>
-          <a href="#next-step">Next Step</a>
+          <a href="#why">Kenapa Zero Capex</a>
+          <a href="#solution">Solusi Invila™</a>
+          <a href="#flow">Cara Kerja</a>
+          <a href="#proof">Dampak Bisnis</a>
+          <a href="#next-step">Mulai Assessment</a>
         </nav>
 
         <div class="header-actions">
-          <a class="btn btn-secondary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20membahas%20kebutuhan%20air%20industri%20kami." target="_blank" rel="noopener">Chat WhatsApp</a>
+          <a class="btn btn-secondary" href="#proof">Hitung Savings</a>
+          <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20membahas%20kebutuhan%20air%20industri%20kami." target="_blank" rel="noopener">Chat WhatsApp</a>
           <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><span></span></button>
         </div>
       </div>
 
       <div class="mobile-nav" id="mobileNav">
         <div class="mobile-card">
-          <a href="#why">Why Zero Capex</a>
-          <a href="#solution">Solutions</a>
-          <a href="#flow">How It Works</a>
-          <a href="#proof">ROI &amp; Impact</a>
-          <a href="#next-step">Next Step</a>
+          <a href="#why">Kenapa Zero Capex</a>
+          <a href="#solution">Solusi Invila™</a>
+          <a href="#flow">Cara Kerja</a>
+          <a href="#proof">Dampak Bisnis</a>
+          <a href="#next-step">Mulai Assessment</a>
+          <a href="#proof">Hitung Savings</a>
+          <a href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20membahas%20kebutuhan%20air%20industri%20kami." target="_blank" rel="noopener">Chat WhatsApp</a>
         </div>
       </div>
     </div>
