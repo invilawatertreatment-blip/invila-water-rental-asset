@@ -662,9 +662,43 @@
       line-height: 1.82;
     }
 
+    @media (max-width: 780px) {
+      .assessment-shell {
+        padding: 16px;
+        border-radius: 20px;
+      }
+      .assessment-note,
+      .assessment-contact,
+      .privacy-note {
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .assessment-list li {
+        padding: 12px 14px;
+        border-radius: 14px;
+        font-size: 0.9rem;
+      }
+      .assessment-body p,
+      .assessment-note p,
+      .assessment-contact p,
+      .privacy-note p,
+      .assessment-close p {
+        font-size: 0.92rem;
+        line-height: 1.68;
+      }
+      .assessment-tagline {
+        gap: 8px 10px;
+      }
+      .assessment-tagline span {
+        font-size: 0.66rem;
+      }
+    }
+
     .solution-item,
     .proof-card,
-    .flow-card {
+    .flow-card,
+    .industry-card,
+    .trust-card {
       padding: 24px;
       border-radius: 24px;
       background: rgba(255,255,255,0.92);
@@ -673,7 +707,9 @@
     }
     .solution-item small,
     .proof-card small,
-    .flow-card small {
+    .flow-card small,
+    .industry-card small,
+    .trust-card small {
       display: block;
       margin-bottom: 12px;
       font-size: 0.7rem;
@@ -684,7 +720,9 @@
     }
     .solution-item h3,
     .proof-card h3,
-    .flow-card h3 {
+    .flow-card h3,
+    .industry-card h3,
+    .trust-card h3 {
       margin: 0 0 12px;
       font-size: 1.06rem;
       line-height: 1.28;
@@ -693,11 +731,297 @@
     }
     .solution-item p,
     .proof-card p,
-    .flow-card p {
+    .flow-card p,
+    .industry-card p,
+    .trust-card p {
       margin: 0;
       color: var(--muted);
       font-size: 0.94rem;
       line-height: 1.72;
+    }
+
+    .industry-shell {
+      padding: 38px;
+      display: grid;
+      gap: 28px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.86));
+    }
+    .industry-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: 28px;
+      align-items: start;
+    }
+    .industry-intro p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.88;
+      text-wrap: pretty;
+    }
+    .industry-note {
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(34,87,216,0.06), rgba(255,255,255,0.74));
+      border: 1px solid rgba(34,87,216,0.10);
+    }
+    .industry-note h3 {
+      margin: 0 0 12px;
+      font-size: 1.08rem;
+      line-height: 1.24;
+      letter-spacing: -0.03em;
+      color: #111827;
+    }
+    .industry-note p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.76;
+      text-wrap: pretty;
+    }
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .industry-close {
+      max-width: 54rem;
+    }
+    .industry-close p {
+      margin: 0;
+      color: #172033;
+      font-size: 1rem;
+      line-height: 1.9;
+      font-weight: 600;
+      text-wrap: pretty;
+    }
+
+    .trust-shell {
+      padding: 38px;
+      display: grid;
+      gap: 28px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.86));
+    }
+    .trust-split {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+    .trust-panel {
+      padding: 26px;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(17,24,39,0.06);
+      display: grid;
+      gap: 18px;
+    }
+    .trust-visual {
+      min-height: 280px;
+      border-radius: 22px;
+      border: 1px solid rgba(17,24,39,0.08);
+      background: linear-gradient(180deg, #dfe7f6, #cfd9ec);
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .trust-copy {
+      display: grid;
+      gap: 14px;
+    }
+    .trust-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.84;
+      text-wrap: pretty;
+    }
+    .trust-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .trust-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(34,87,216,0.08);
+      color: var(--brand);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .trust-support {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .trust-close {
+      max-width: 54rem;
+    }
+    .trust-close p {
+      margin: 0;
+      color: #172033;
+      font-size: 1rem;
+      line-height: 1.9;
+      font-weight: 600;
+      text-wrap: pretty;
+    }
+
+    .assessment-shell {
+      padding: 38px;
+      display: grid;
+      gap: 28px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.86));
+    }
+    .assessment-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: 28px;
+      align-items: start;
+    }
+    .assessment-body {
+      display: grid;
+      gap: 16px;
+      max-width: 52rem;
+    }
+    .assessment-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.88;
+      text-wrap: pretty;
+    }
+    .assessment-note {
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(34,87,216,0.06), rgba(255,255,255,0.74));
+      border: 1px solid rgba(34,87,216,0.10);
+    }
+    .assessment-note h3 {
+      margin: 0 0 12px;
+      font-size: 1.08rem;
+      line-height: 1.24;
+      letter-spacing: -0.03em;
+      color: #111827;
+    }
+    .assessment-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
+      gap: 18px;
+    }
+    .assessment-note p,
+    .assessment-contact p,
+    .privacy-note p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.76;
+      text-wrap: pretty;
+    }
+    .assessment-contact {
+      padding: 26px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(17,24,39,0.06);
+      display: grid;
+      gap: 16px;
+    }
+    .assessment-contact small {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+    .assessment-contact h3 {
+      margin: 0;
+      font-size: 1.12rem;
+      line-height: 1.24;
+      letter-spacing: -0.03em;
+      color: #111827;
+    }
+    .assessment-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .assessment-list li {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #f8fafc;
+      border: 1px solid rgba(17,24,39,0.06);
+      color: #172033;
+      font-size: 0.94rem;
+      line-height: 1.56;
+      font-weight: 600;
+    }
+    .assessment-direct {
+      display: grid;
+      gap: 10px;
+      padding: 16px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(34,87,216,0.06), rgba(255,255,255,0.78));
+      border: 1px solid rgba(34,87,216,0.10);
+    }
+    .assessment-direct strong {
+      color: #111827;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    .privacy-note {
+      padding: 20px 22px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.84);
+      border: 1px solid rgba(17,24,39,0.06);
+    }
+    .assessment-close {
+      max-width: 54rem;
+    }
+    .assessment-close p {
+      margin: 0;
+      color: #172033;
+      font-size: 1rem;
+      line-height: 1.9;
+      font-weight: 600;
+      text-wrap: pretty;
+    }
+    .assessment-actions {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .assessment-tagline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      padding-top: 2px;
+    }
+    .assessment-tagline span {
+      color: var(--brand);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .cta-shell {
@@ -733,16 +1057,111 @@
       line-height: 1.84;
     }
 
-    footer { padding: 28px 0 38px; }
-    .foot {
-      padding-top: 20px;
+    footer { padding: 20px 0 34px; }
+    .footer-shell {
+      padding: 30px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.88));
+      display: grid;
+      gap: 24px;
+    }
+    .footer-main {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(220px, 0.72fr) minmax(260px, 0.9fr);
+      gap: 28px;
+      align-items: start;
+    }
+    .footer-brand {
+      display: grid;
+      gap: 12px;
+      max-width: 34rem;
+    }
+    .footer-brand h3,
+    .footer-links h3,
+    .footer-contact h3 {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.24;
+      letter-spacing: -0.03em;
+      color: #111827;
+    }
+    .footer-brand .brand-inline {
+      font-size: 1.9rem;
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      color: #0b1020;
+      text-transform: uppercase;
+    }
+    .footer-kicker {
+      margin: 0;
+      color: var(--brand);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .footer-brand p,
+    .footer-contact p,
+    .footer-contact a {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.78;
+      text-wrap: pretty;
+    }
+    .footer-links {
+      display: grid;
+      gap: 12px;
+    }
+    .footer-links nav {
+      display: grid;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: #172033;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+    .footer-contact {
+      display: grid;
+      gap: 12px;
+    }
+    .footer-contact-block {
+      display: grid;
+      gap: 6px;
+    }
+    .footer-contact-label {
+      color: var(--brand);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+    .footer-bottom {
+      padding-top: 18px;
       border-top: 1px solid rgba(17,24,39,0.08);
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
+      display: grid;
+      gap: 8px;
       color: #667389;
-      font-size: 0.88rem;
+      font-size: 0.84rem;
+      line-height: 1.7;
+    }
+    .footer-bottom-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom-tagline {
+      color: var(--brand);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     @media (max-width: 1080px) {
@@ -757,7 +1176,14 @@
       .cta-shell,
       .solution-lead,
       .solution-benefits,
-      .solution-cta { grid-template-columns: 1fr; }
+      .solution-cta,
+      .industry-intro,
+      .industry-grid,
+      .trust-split,
+      .trust-support,
+      .assessment-intro,
+      .assessment-grid,
+      .assessment-actions { grid-template-columns: 1fr; }
       .pressure-story,
       .pressure-story:nth-child(even) { grid-template-columns: 1fr; }
       .pressure-story:nth-child(even) .pressure-head,
@@ -802,7 +1228,7 @@
     }
 
     @media (max-width: 780px) {
-      .wrap { width: min(calc(100% - 28px), 560px); }
+      .wrap { width: min(calc(100% - 16px), 100%); }
 
       .site-header {
         background: rgba(255,255,255,0.94);
@@ -886,7 +1312,10 @@
       .solution-grid,
       .proof-grid,
       .flow-grid,
-      .solution-benefits {
+      .solution-benefits,
+      .industry-grid,
+      .trust-support,
+      .assessment-actions {
         grid-template-columns: 1fr;
       }
       .hero-points {
@@ -923,6 +1352,9 @@
       .solution-shell,
       .flow-shell,
       .proof-shell,
+      .industry-shell,
+      .trust-shell,
+      .assessment-shell,
       .cta-shell {
         padding: 16px;
         border-radius: 20px;
@@ -1024,9 +1456,28 @@
         font-size: 0.78rem;
       }
 
-      .foot {
-        font-size: 0.78rem;
-        gap: 8px;
+      .footer-shell {
+        padding: 18px;
+        border-radius: 20px;
+      }
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .footer-brand .brand-inline {
+        font-size: 1.6rem;
+      }
+      .footer-brand p,
+      .footer-contact p,
+      .footer-contact a,
+      .footer-links a,
+      .footer-bottom {
+        font-size: 0.88rem;
+      }
+      .footer-bottom-row {
+        display: grid;
+        gap: 6px;
+        justify-content: start;
       }
       .mobile-wa-fab {
         display: inline-flex;
@@ -1303,16 +1754,175 @@
       </div>
     </section>
 
+    <section class="section" id="industry-relevance">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Industry Relevance</p>
+            <h2 class="section-title">Solusi untuk Industri yang Menjadikan Air sebagai Aset Strategis</h2>
+          </div>
+          <p class="section-copy">Setiap industri menghadapi tantangan yang berbeda, namun memiliki satu kebutuhan yang sama: infrastruktur air yang stabil, terukur, dan tidak membebani arus kas dengan investasi besar di depan. Invila™ hadir untuk membantu memastikan utilitas air tidak lagi menjadi titik lemah operasi, melainkan pendukung utama efisiensi, compliance, dan ketahanan bisnis jangka panjang.</p>
+        </div>
+
+        <div class="industry-shell">
+          <div class="industry-intro">
+            <div>
+              <p>Terlepas dari sektornya, tantangannya tetap sama: bagaimana mengubah infrastruktur air dari sumber biaya dan risiko menjadi sistem yang lebih transparan, lebih terkontrol, dan lebih selaras dengan bisnis inti. Di sinilah pendekatan Invila™ memberikan perbedaan nyata.</p>
+            </div>
+            <aside class="industry-note">
+              <h3>Setiap Industri Memiliki Baseline Berbeda</h3>
+              <p>Kebutuhan air, karakteristik limbah, dan tekanan biaya tiap fasilitas tidak pernah sama. Karena itu, pendekatan Invila™ selalu dimulai dari pemahaman kondisi aktual di lapangan agar solusi yang dihadirkan benar-benar relevan dan realistis.</p>
+            </aside>
+          </div>
+
+          <div class="industry-grid">
+            <article class="industry-card"><small>Manufacturing</small><p>Untuk fasilitas manufaktur yang membutuhkan pasokan air andal agar lini produksi tetap bergerak stabil, sekaligus menekan tekanan biaya utilitas yang terus membebani margin.</p></article>
+            <article class="industry-card"><small>Food &amp; Beverage</small><p>Untuk operasi yang membutuhkan konsistensi kualitas air, higienitas sistem, dan kesiapan utilitas yang mendukung standar keamanan pangan serta audit kualitas yang ketat.</p></article>
+            <article class="industry-card"><small>Chemical Process</small><p>Untuk fasilitas yang membutuhkan pengelolaan air yang lebih presisi dan stabil, di mana perubahan kecil pada kualitas utilitas dapat berdampak langsung pada proses dan hasil akhir produksi.</p></article>
+            <article class="industry-card"><small>Textile &amp; Dyeing</small><p>Untuk industri dengan kebutuhan volume air besar yang menuntut kontinuitas pasokan, kestabilan kualitas, dan pengelolaan limbah yang lebih efisien agar margin tetap terjaga.</p></article>
+            <article class="industry-card"><small>RPA</small><p>Untuk fasilitas RPA yang membutuhkan air bersih dengan standar higienitas tinggi serta pengelolaan air limbah yang lebih terkendali agar operasional tetap efisien, patuh regulasi, dan tidak membebani profitabilitas.</p></article>
+            <article class="industry-card"><small>Dairy Farm</small><p>Untuk fasilitas dairy farm yang bergantung pada pasokan air yang andal untuk sanitasi, kebersihan, dan produktivitas, serta membutuhkan pengelolaan air limbah yang lebih terukur agar standar kualitas tetap terjaga.</p></article>
+            <article class="industry-card"><small>Industrial Estate &amp; Utilities</small><p>Untuk kawasan industri dan fasilitas utilitas yang membutuhkan infrastruktur air yang scalable, efisien, dan siap menghadapi tekanan permintaan pasokan serta kompleksitas operasional yang terus berkembang.</p></article>
+            <article class="industry-card"><small>Critical Facilities</small><p>Untuk fasilitas yang tidak memiliki ruang bagi gangguan utilitas air, di mana kestabilan pasokan menjadi fondasi utama dari business continuity dan ketahanan operasi.</p></article>
+          </div>
+
+          <div class="industry-close">
+            <p>Terlepas dari sektornya, tantangannya tetap sama: bagaimana mengubah infrastruktur air dari sumber biaya dan risiko menjadi sistem yang lebih transparan, lebih terkontrol, dan lebih selaras dengan bisnis inti. Di sinilah pendekatan Invila™ memberikan perbedaan nyata.</p>
+          </div>
+
+          <div class="solution-cta">
+            <div>
+              <small>Analisa Kecocokan Skema untuk Industri Anda</small>
+              <h3>Ceritakan tantangan site Anda.</h3>
+              <p>Tim Invila™ akan membantu memetakan solusi yang paling relevan bagi operasional, compliance, dan anggaran perusahaan Anda.</p>
+            </div>
+            <div>
+              <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20analisa%20kecocokan%20skema%20untuk%20industri%20kami." target="_blank" rel="noopener">Analisa Kecocokan Skema untuk Industri Anda</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trust-signals">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Trust Signals &amp; Portfolio</p>
+            <h2 class="section-title">Kredibilitas yang Dibangun di Atas Performa Lapangan</h2>
+          </div>
+          <p class="section-copy">Kepercayaan tidak dibangun dari janji, tetapi dari keahlian engineering yang teruji, proses yang jelas, dan rekam jejak implementasi yang nyata. Invila™ hadir dengan pendekatan yang menggabungkan disiplin teknis, transparansi eksekusi, dan pemahaman atas kebutuhan air industri yang semakin kompleks.</p>
+        </div>
+
+        <div class="trust-shell">
+          <div class="trust-split">
+            <article class="trust-panel">
+              <div class="trust-copy">
+                <small>Lead Engineer — Invila™ Systems</small>
+                <h3>Engineering Authority yang Berakar pada Pengalaman Lapangan</h3>
+                <p>Dipimpin langsung oleh Ir. Piator Simbolon, ST, Invila™ menghadirkan pendekatan engineering yang berakar pada pengalaman mendalam di bidang Water &amp; Waste Water Treatment Engineering. Berbasis di Engineering Office Pulo Gadung, Jakarta Timur, tim kami memadukan standar teknis yang ketat dengan pendekatan sistem yang lebih modern untuk menjawab tantangan industri saat ini.</p>
+                <p>Dengan pendekatan ini, perusahaan tidak hanya berbicara dengan penyedia sistem, tetapi dengan tim engineering yang memahami bagaimana menerjemahkan tekanan utilitas menjadi solusi yang lebih terukur, lebih andal, dan lebih realistis untuk dijalankan.</p>
+              </div>
+              <div class="trust-visual">Foto profesional lead engineer atau tim engineering di Engineering Office Pulo Gadung, Jakarta Timur.</div>
+            </article>
+
+            <article class="trust-panel">
+              <div class="trust-copy">
+                <small>SPAM 15 LPS — Kawasan Industri Wijayakusuma (KIW)</small>
+                <h3>Implementasi Nyata dengan Skala yang Relevan bagi Kebutuhan Industri</h3>
+                <p>Salah satu implementasi penting Invila™ adalah pengelolaan sistem penyediaan air minum berkapasitas 15 Liter Per Second di Kawasan Industri Wijayakusuma. Proyek ini menunjukkan kapabilitas Invila™ dalam menangani infrastruktur air dengan skala yang relevan bagi kebutuhan industri, standar keandalan yang tinggi, dan orientasi pada efisiensi operasional yang terukur.</p>
+                <p>Bagi calon klien, ini memberikan sinyal penting bahwa Invila™ tidak hanya menawarkan konsep, tetapi memiliki pijakan nyata dalam implementasi sistem air yang menuntut kedisiplinan engineering dan kesiapan operasional.</p>
+              </div>
+              <div class="trust-visual">Foto unit filtrasi, instalasi site, atau dokumentasi proyek.<div class="trust-meta" style="justify-content:center; margin-top:14px;"><span class="trust-chip">Kapasitas 15 LPS</span><span class="trust-chip">Go Live 2026</span></div></div>
+            </article>
+          </div>
+
+          <div class="trust-support">
+            <article class="trust-card"><small>Strategic Location</small><h3>Engineering Office di Pulo Gadung, Jakarta Timur</h3><p>Lokasi engineering office yang berada di kawasan industri strategis membantu mempercepat koordinasi, respons teknis, dan kedekatan dengan kebutuhan klien industri di Jabodetabek dan sekitarnya.</p></article>
+            <article class="trust-card"><small>Standards &amp; Compliance Readiness</small><h3>Dirancang untuk mendukung kepatuhan terhadap standar teknis dan baku mutu</h3><p>Pendekatan Invila™ dibangun dengan perhatian pada kebutuhan compliance dan spesifikasi teknis industri, agar solusi yang dihadirkan tidak hanya berjalan, tetapi juga siap menghadapi tuntutan operasional dan regulasi.</p></article>
+            <article class="trust-card"><small>Continuous Support</small><h3>Didukung monitoring dan pendampingan teknis berkelanjutan</h3><p>Melalui pendekatan remote monitoring dan keterlibatan tim teknis, sistem tidak dibiarkan berjalan tanpa visibility dan pengawasan yang memadai.</p></article>
+          </div>
+
+          <div class="trust-close">
+            <p>Pada akhirnya, perusahaan tidak membutuhkan sekadar vendor air. Yang dibutuhkan adalah partner engineering yang mampu berpikir strategis, bekerja presisi, dan hadir dengan rekam jejak implementasi yang dapat dipercaya. Di situlah Invila™ memberikan perbedaan.</p>
+          </div>
+
+          <div class="cta-shell">
+            <div>
+              <small>Berhenti Menunda, Mulai Mengoptimalkan.</small>
+              <h3>Konsultasikan kebutuhan site Anda hari ini.</h3>
+              <p>Jangan biarkan infrastruktur air terus menjadi hambatan bagi efisiensi dan pertumbuhan bisnis Anda. Lihat bagaimana pendekatan Invila™ dapat menghadirkan perubahan nyata tanpa membebani investasi di depan. Ceritakan kebutuhan fasilitas Anda. Tim Invila™ akan membantu memetakan langkah awal yang paling relevan untuk operasional, compliance, dan target bisnis Anda.</p>
+            </div>
+            <div style="display:grid; gap:12px;">
+              <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20menghubungi%20lead%20engineer%20Invila." target="_blank" rel="noopener">Hubungi Lead Engineer Kami</a>
+              <a class="btn btn-secondary" href="#">Download Company Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="next-step">
       <div class="wrap">
-        <div class="cta-shell">
+        <div class="section-head">
           <div>
-            <small>Next Step</small>
-            <h3>Kalau halaman ini membuat Anda merasa “ini layak saya minta tim lihat lebih lanjut”, maka langkah berikutnya cukup sederhana.</h3>
-            <p>Mulai dari percakapan yang tenang dan profesional. Bahas kebutuhan air industri Anda, selaraskan dengan target operasional dan finansial, lalu tentukan apakah visit factory atau diskusi lanjutan memang relevan untuk tahap berikutnya.</p>
+            <p class="section-kicker">Start Your Assessment</p>
+            <h2 class="section-title">Berhenti Menunda, Mulai Mengoptimalkan Infrastruktur Air Anda</h2>
           </div>
-          <div>
-            <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20bahas%20kebutuhan%20air%20industri%20kami." target="_blank" rel="noopener">Bahas Kebutuhan Air Industri Anda via WhatsApp</a>
+          <p class="section-copy">Jangan biarkan infrastruktur air tetap menjadi titik lemah operasional dan keputusan investasi yang terus tertunda. Mulailah dari percakapan yang tepat untuk menilai kondisi site Anda, memetakan tekanan biaya, dan melihat bagaimana pendekatan Invila™ dapat menghadirkan solusi yang lebih realistis tanpa membebani capex di awal.</p>
+        </div>
+
+        <div class="assessment-shell">
+          <div class="assessment-intro">
+            <div class="assessment-body">
+              <p>Bagi banyak perusahaan, langkah pertama yang paling penting bukan langsung mengganti sistem, melainkan memahami baseline aktual, risiko operasional, dan peluang efisiensi yang benar-benar relevan bagi fasilitas mereka. Di sinilah diskusi awal bersama Invila™ menjadi bernilai.</p>
+            </div>
+            <aside class="assessment-note">
+              <h3>Mulai dari Assessment Awal yang Sederhana</h3>
+              <ul class="assessment-list">
+                <li>Nama Lengkap &amp; Jabatan</li>
+                <li>Nama Perusahaan &amp; Sektor Industri</li>
+                <li>Lokasi Fasilitas / Site</li>
+                <li>Perkiraan Kebutuhan Air</li>
+                <li>Tantangan Utama yang Sedang Dihadapi</li>
+              </ul>
+            </aside>
+          </div>
+
+          <div class="assessment-grid">
+            <article class="assessment-contact">
+              <div>
+                <small>Hubungi Kantor Engineering Kami</small>
+                <h3>Ir. Piator Simbolon, ST</h3>
+                <p>Lead Engineer — Invila™ Systems</p>
+              </div>
+              <div class="assessment-direct">
+                <strong>Engineering Office</strong>
+                <p>Jl. Kayu Putih II No. 78, Pulo Gadung, East Jakarta</p>
+              </div>
+              <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20konsultasi%20teknis%20langsung%20via%20WhatsApp." target="_blank" rel="noopener">Konsultasi Teknis Langsung via WhatsApp</a>
+            </article>
+
+            <div class="privacy-note">
+              <p>Privasi data Anda adalah prioritas kami. Informasi teknis yang Anda bagikan akan diperlakukan secara profesional dan digunakan secara terbatas untuk membantu proses assessment awal kebutuhan fasilitas Anda. NDA formal dapat disiapkan sesuai kebutuhan proses evaluasi.</p>
+            </div>
+          </div>
+
+          <div class="assessment-close">
+            <p>Langkah pertama yang realistis selalu dimulai dari kejelasan. Dengan assessment yang tepat, perusahaan dapat melihat apakah jalur perbaikan yang paling relevan adalah efisiensi operasional, peningkatan reliability, atau implementasi skema Zero Capex yang lebih selaras dengan arus kas dan target bisnis.</p>
+          </div>
+
+          <div class="assessment-actions">
+            <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20konsultasikan%20kondisi%20site%20kami." target="_blank" rel="noopener">Konsultasikan Kondisi Site Anda</a>
+            <a class="btn btn-secondary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20ajukan%20visit%20factory." target="_blank" rel="noopener">Ajukan Visit Factory</a>
+            <a class="btn btn-secondary" href="#">Download Company Profile</a>
+          </div>
+
+          <div class="assessment-tagline">
+            <span>Zero Capex.</span>
+            <span>Water-as-a-Service.</span>
+            <span>Smart Monitoring SCADA-IoT.</span>
+            <span>Performance-Based Approach.</span>
           </div>
         </div>
       </div>
@@ -1320,10 +1930,60 @@
   </main>
 
   <footer>
-    <div class="wrap foot">
-      <div><span class="brand-inline">Invila<sup>™</sup></span> — PT. Invila Tirta Nusantara</div>
-      <div>Sentra Niaga 2 No. 5 Harapan Indah, Bekasi 17131, Jawa Barat</div>
-      <div>WhatsApp: Irfon Desman · 085219493322</div>
+    <div class="wrap">
+      <div class="footer-shell">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <div>
+              <div class="brand-inline">Invila<sup>™</sup></div>
+              <p class="footer-kicker">Zero Capex Water Infrastructure for Industry</p>
+            </div>
+            <p>Solusi infrastruktur air yang lebih andal, lebih terukur, dan lebih realistis bagi industri. Dirancang untuk membantu perusahaan meningkatkan efisiensi utilitas tanpa membebani CAPEX di awal, melalui pendekatan Water-as-a-Service dan Smart Monitoring SCADA-IoT.</p>
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <nav aria-label="Footer">
+              <a href="#solution">The Invila™ Way</a>
+              <a href="#flow">How It Works</a>
+              <a href="#proof">Business Impact</a>
+              <a href="#industry-relevance">Industry Relevance</a>
+              <a href="#trust-signals">Trust Signals</a>
+              <a href="#next-step">Start Your Assessment</a>
+            </nav>
+          </div>
+
+          <div class="footer-contact">
+            <h3>Hubungi Kantor Engineering Kami</h3>
+            <div class="footer-contact-block">
+              <span class="footer-contact-label">Engineering Office</span>
+              <p>Jl. Kayu Putih II No. 78, Pulo Gadung, East Jakarta, Indonesia</p>
+            </div>
+            <div class="footer-contact-block">
+              <span class="footer-contact-label">Lead Engineer</span>
+              <p>Ir. Piator Simbolon, ST</p>
+            </div>
+            <div class="footer-contact-block">
+              <span class="footer-contact-label">WhatsApp / Phone</span>
+              <a href="https://wa.me/6285219493322" target="_blank" rel="noopener">+62 852-1949-3322</a>
+            </div>
+            <div class="footer-contact-block">
+              <span class="footer-contact-label">Email</span>
+              <p>[Alamat Email]</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-row">
+            <span>© 2026 Invila™ / PT. Invila Tirta Nusantara. All rights reserved.</span>
+            <span>Privacy Commitment | NDA Available on Request</span>
+          </div>
+          <div class="footer-bottom-tagline">Zero Capex. Water-as-a-Service. Smart Monitoring SCADA-IoT.</div>
+          <div>PT. Invila Tirta Nusantara</div>
+          <div>Sentra Niaga 2 No. 5 Harapan Indah, Bekasi 17131, Jawa Barat</div>
+        </div>
+      </div>
     </div>
   </footer>
 
