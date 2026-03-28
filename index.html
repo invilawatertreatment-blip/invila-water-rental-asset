@@ -333,7 +333,7 @@
       background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.92));
       border: 1px solid rgba(17,24,39,0.06);
       box-shadow: var(--shadow);
-      overflow: visible;
+      overflow: hidden;
       margin-top: 20px;
     }
     .media-top {
@@ -371,6 +371,7 @@
       min-height: 460px;
       height: 460px;
       padding: 0;
+      display: block;
     }
     .media-window video {
       position: absolute;
@@ -380,6 +381,7 @@
       object-fit: cover;
       object-position: center center;
       background: #dfe7f6;
+      border-radius: 22px;
     }
     .media-executive-overlay {
       position: absolute;
@@ -395,6 +397,7 @@
       backdrop-filter: blur(5px);
       z-index: 2;
       pointer-events: none;
+      box-sizing: border-box;
     }
     .media-executive-overlay small {
       display: block;
@@ -411,6 +414,7 @@
       line-height: 1.34;
       letter-spacing: -0.02em;
       color: #fff;
+      margin: 0;
     }
 
     .section { padding: 0 0 96px; }
@@ -800,6 +804,9 @@
         min-height: 300px;
         height: 300px;
       }
+      .media-window video {
+        border-radius: 20px;
+      }
       .btn { width: 100%; }
       .hero-actions { display: grid; grid-template-columns: 1fr; }
       .section { padding: 0 0 72px; }
@@ -1035,17 +1042,40 @@
         <div class="section-head">
           <div>
             <p class="section-kicker">How It Works</p>
-            <h2 class="section-title">Alur yang jelas, singkat, dan tidak membingungkan.</h2>
+            <h2 class="section-title">Proses yang Transparan, Hasil yang Lebih Terukur</h2>
           </div>
-          <p class="section-copy">Landing page yang baik harus memandu, bukan membingungkan. Karena itu alurnya dibuat sederhana: masalah, solusi, cara kerja, bukti teknis, lalu langkah berikutnya.</p>
+          <p class="section-copy">Roadmap yang jelas untuk menghadirkan infrastruktur air yang lebih efisien, lebih andal, dan lebih realistis bagi bisnis Anda.</p>
         </div>
-        <div class="flow-shell">
+
+        <div class="solution-shell">
+          <div class="solution-lead">
+            <div class="solution-body">
+              <p>Setiap perusahaan memiliki tantangan yang berbeda. Karena itu, Invila™ memulai dari data nyata di lapangan agar solusi yang dihadirkan benar-benar selaras dengan kebutuhan operasional, target finansial, dan arah bisnis perusahaan Anda.</p>
+              <p>Alih-alih menawarkan pendekatan yang generik, Invila™ membawa proses yang lebih terstruktur untuk membantu perusahaan memahami kondisi existing system, memetakan potensi efisiensi, dan menyiapkan skema implementasi yang lebih siap dijalankan.</p>
+            </div>
+            <aside class="solution-summary">
+              <small>Implementation Roadmap</small>
+              <p>Dengan proses yang jelas sejak awal, perusahaan dapat mengambil keputusan dengan lebih percaya diri dan bergerak menuju infrastruktur air yang lebih efisien tanpa masuk ke jalur investasi yang berat di depan.</p>
+            </aside>
+          </div>
+
           <div class="flow-grid">
-            <article class="flow-card"><small>Step 01</small><h3>Pahami kebutuhan</h3><p>Diskusi awal untuk menangkap target operasi, biaya, reliability, dan prioritas perusahaan.</p></article>
-            <article class="flow-card"><small>Step 02</small><h3>Assessment lokasi</h3><p>Visit factory membantu melihat kondisi aktual, risiko utilitas, dan peluang perbaikan yang layak dipertimbangkan.</p></article>
-            <article class="flow-card"><small>Step 03</small><h3>Susun pendekatan</h3><p>Solusi dipetakan sesuai konteks pabrik, termasuk aspek teknis, finansial, dan implementasi.</p></article>
-            <article class="flow-card"><small>Step 04</small><h3>Implementasi bertahap</h3><p>Pelaksanaan dirancang agar tetap memperhatikan kelangsungan operasional dan kebutuhan koordinasi internal.</p></article>
-            <article class="flow-card"><small>Step 05</small><h3>Monitoring &amp; support</h3><p>Tim mendapatkan dukungan visibilitas dan pengawalan setelah sistem berjalan.</p></article>
+            <article class="flow-card"><small>Step 01</small><h3>Assessment Kondisi Aktual</h3><p>Kami memetakan kondisi sistem eksisting, kebutuhan air, tekanan biaya, serta titik-titik inefisiensi yang memengaruhi operasional dan profitabilitas perusahaan.</p></article>
+            <article class="flow-card"><small>Step 02</small><h3>Perancangan Solusi yang Tepat</h3><p>Berdasarkan hasil assessment, tim Invila™ menyiapkan rancangan infrastruktur air yang lebih andal, lebih modern, dan lebih relevan dengan kebutuhan nyata fasilitas Anda.</p></article>
+            <article class="flow-card"><small>Step 03</small><h3>Transparansi Nilai Ekonomi</h3><p>Kami memaparkan struktur nilai proyek secara terbuka agar perusahaan memiliki visibilitas yang jelas terhadap potensi efisiensi, dampak operasional, dan pendekatan investasi yang kami tanggung.</p></article>
+            <article class="flow-card"><small>Step 04</small><h3>Penetapan Skema Water-as-a-Service</h3><p>Skema kerja sama dirancang agar lebih selaras dengan kebutuhan bisnis perusahaan, tanpa membebani capex di awal dan tetap memberi kepastian implementasi yang lebih realistis.</p></article>
+            <article class="flow-card"><small>Step 05</small><h3>Implementasi &amp; Go-Live</h3><p>Setelah skema disepakati, infrastruktur air dijalankan dengan pendekatan yang terukur dan didukung monitoring berbasis SCADA-IoT untuk membantu visibility dan kontrol performa secara berkelanjutan.</p></article>
+          </div>
+
+          <div class="solution-cta">
+            <div>
+              <small>Jadwalkan Diskusi Awal untuk Fasilitas Anda</small>
+              <h3>Ceritakan kondisi site Anda.</h3>
+              <p>Tim Invila™ akan membantu memetakan langkah awal yang paling relevan untuk kebutuhan operasional dan target bisnis Anda.</p>
+            </div>
+            <div>
+              <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20menjadwalkan%20diskusi%20awal%20untuk%20fasilitas%20kami." target="_blank" rel="noopener">Jadwalkan Diskusi Awal untuk Fasilitas Anda</a>
+            </div>
           </div>
         </div>
       </div>
