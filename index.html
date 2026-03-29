@@ -618,6 +618,75 @@
       background: linear-gradient(180deg, rgba(34,87,216,0.06), rgba(255,255,255,0.78));
       border: 1px solid rgba(34,87,216,0.10);
     }
+    .solution-summary {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(17,24,39,0.06);
+    }
+    .solution-summary h3 {
+      margin: 0 0 12px;
+      font-size: 1.08rem;
+      line-height: 1.24;
+      letter-spacing: -0.03em;
+      color: #111827;
+      max-width: 24ch;
+    }
+    .solution-summary p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.72;
+      font-weight: 500;
+      text-wrap: pretty;
+    }
+    .solution-summary p + p {
+      margin-top: 12px;
+    }
+    .bridge-band,
+    .summary-lock-band,
+    .pillar-band {
+      padding: 26px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(17,24,39,0.06);
+    }
+    .bridge-content,
+    .summary-lock-content {
+      max-width: 52rem;
+      margin: 0 auto;
+      display: grid;
+      gap: 14px;
+    }
+    .bridge-title,
+    .pillar-title {
+      margin: 0 0 12px;
+      font-size: 1.08rem;
+      line-height: 1.24;
+      letter-spacing: -0.03em;
+      color: #111827;
+    }
+    .bridge-copy,
+    .pillar-band p,
+    .summary-lock-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.78;
+      text-wrap: pretty;
+    }
+    .pillar-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .pillar-list-item small {
+      display: block;
+      margin: 0 0 6px;
+      font-size: 0.66rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
     .solution-summary p,
     .industry-close p,
     .trust-close p,
@@ -818,6 +887,23 @@
     }
 
     @media (max-width: 780px) {
+      .bridge-band,
+      .summary-lock-band,
+      .pillar-band {
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .bridge-copy,
+      .pillar-band p,
+      .summary-lock-copy {
+        font-size: 0.9rem;
+        line-height: 1.62;
+      }
+      .bridge-title,
+      .pillar-title {
+        font-size: 1rem;
+        line-height: 1.22;
+      }
       .wrap {
         width: calc(100% - 12px);
         max-width: none;
@@ -1202,11 +1288,11 @@
         </div>
               </div>
 
-        <div class="value-band" style="margin-top:24px;">
-          <div style="max-width: 52rem; margin: 0 auto; display:grid; gap:14px;">
+        <div class="bridge-band" style="margin-top:24px;">
+          <div class="bridge-content">
             <p class="section-kicker" style="margin:0;">The Strategic Pivot</p>
-            <h3 style="margin:0; font-size: clamp(1.28rem, 2vw, 1.7rem); line-height:1.18; letter-spacing:-0.035em; color:#0f172a;">Menghentikan Siklus Reaktif, Memulai Kepastian Operasional.</h3>
-            <p style="margin:0; color: var(--muted); font-size: 1.02rem; line-height: 1.92; text-wrap: pretty;">Kabar baiknya, tantangan-tantangan di atas bukanlah tanda kegagalan manajemen, melainkan sinyal bahwa sistem utilitas saat ini tidak lagi mampu mengikuti kebutuhan operasional dan ambisi pertumbuhan perusahaan. Anda tidak membutuhkan lebih banyak tambal sulam atau anggaran tak terduga yang terus menggerus laba. Yang dibutuhkan adalah transisi strategis—di mana risiko investasi, beban teknis, dan kerumitan operasional air ditangani oleh partner yang tepat, agar perusahaan dapat kembali fokus pada hal yang paling penting: menjaga pertumbuhan, profitabilitas, dan posisi pasar.</p>
+            <h3 class="bridge-title">Menghentikan Siklus Reaktif, Memulai Kepastian Operasional.</h3>
+            <p class="bridge-copy">Kabar baiknya, tantangan-tantangan di atas bukanlah tanda kegagalan manajemen, melainkan sinyal bahwa sistem utilitas saat ini tidak lagi mampu mengikuti kebutuhan operasional dan ambisi pertumbuhan perusahaan. Anda tidak membutuhkan lebih banyak tambal sulam atau anggaran tak terduga yang terus menggerus laba. Yang dibutuhkan adalah transisi strategis—di mana risiko investasi, beban teknis, dan kerumitan operasional air ditangani oleh partner yang tepat, agar perusahaan dapat kembali fokus pada hal yang paling penting: menjaga pertumbuhan, profitabilitas, dan posisi pasar.</p>
           </div>
         </div>
       </div>
@@ -1219,14 +1305,61 @@
             <p class="section-kicker">Dari Cost Center Menjadi Aset Strategis</p>
             <h2 class="section-title">Alihkan Risiko Investasi dan Operasional ke Pundak Kami. Fokuskan Kembali Tim Terbaik Anda untuk Mengekspansi Pasar.</h2>
           </div>
-          <p class="section-copy">&quot;Hentikan pengelolaan utilitas sebagai pusat biaya yang menguras laba. Melalui Water-as-a-Service, Invila™ mengambil alih seluruh beban investasi dan risiko operasional Anda—mengubah sistem air menjadi infrastruktur strategis yang lebih andal, terukur, dan siap mendukung akselerasi ekspansi bisnis Anda.&quot;</p>
+          <p class="section-copy">Hentikan pengelolaan utilitas sebagai pusat biaya yang menguras laba. Melalui Water-as-a-Service, Invila™ mengambil alih seluruh beban investasi dan risiko operasional Anda—mengubah sistem air menjadi infrastruktur strategis yang lebih andal, terukur, dan siap mendukung akselerasi ekspansi bisnis Anda.</p>
         </div>
         <div class="solution-shell">
           <div class="solution-lead">
             <div class="solution-body">
               <p>Di Invila™, kami tidak hanya menghadirkan teknologi, tetapi pendekatan infrastruktur yang membantu mengalihkan beban investasi awal dan kerumitan teknis dari perusahaan Anda. Dengan begitu, tim internal dapat kembali fokus pada hal yang lebih strategis: menjaga profitabilitas, mempercepat ekspansi, dan memperkuat posisi pasar.</p>
             </div>
-            <aside class="solution-summary"><small>THE INVILA™ COMMITMENT</small><p>Kami Membangun di Site Anda, Kami Berinvestasi pada Masa Depan Anda.</p><p>&quot;Melalui instalasi Invila™ WTP, kami menginvestasikan modal dan nama baik kami pada fasilitas Anda, di tengah efisiensi anggaran Anda. Keberhasilan sistem ini merupakan kepentingan bersama, Anda dan Invila™. Inilah wujud nyata kemitraan strategis kami: saat sistem air Anda bekerja, Invila™ berdiri di belakangnya untuk mencapai parameter performa&quot;.</p></aside>
+            <aside class="solution-summary"><small>THE INVILA™ COMMITMENT</small><h3>Kami Membangun di Site Anda, Kami Berinvestasi pada Masa Depan Anda.</h3><p>Melalui model Water-as-a-Service, Invila™ memindahkan seluruh risiko teknis dan beban finansial dari neraca Anda ke pundak kami. Kami menginvestasikan modal dan reputasi kami langsung di fasilitas Anda. Kemitraan strategis ini hanya memiliki satu parameter keberhasilan: performa sistem. Karena jika sistem tidak bekerja sesuai standar Anda, kami tidak mendapatkan imbal balik. Di Invila™, kegagalan operasional adalah kerugian investasi kami—bukan beban Anda.</p></aside>
+          </div>
+
+          <div class="pillar-band">
+            <div class="value-item">
+              <small>Pilar A — Financial Sovereignty</small>
+              <h3 class="pillar-title">Modal Anda Terlalu Berharga untuk Terkunci di Area Utilitas.</h3>
+              <p>Invila™ membangun infrastruktur air yang dibutuhkan tanpa memaksa perusahaan mengunci CAPEX besar di awal. Dengan pendekatan ini, modal produktif dapat tetap diarahkan ke area yang langsung mendorong pertumbuhan, profitabilitas, dan ekspansi pasar—bukan tertahan di sistem utilitas yang kompleks.</p>
+            </div>
+          </div>
+
+          <div class="pillar-band">
+            <div class="value-item">
+              <small>Pilar B: Operational Accountability</small>
+              <h3 class="pillar-title">Kembalikan Tim Engineering Terbaik Anda ke Lini Produksi Utama.</h3>
+              <p>Berhentilah membiarkan aset intelektual terpenting Anda—tim engineering—terjebak dalam siklus 'tambal sulam' utilitas air yang melelahkan. Di Invila™, kami mengambil alih seluruh kompleksitas teknis dan tanggung jawab operasional melalui Service Level Agreement (SLA) yang ketat. Kami tidak dibayar untuk 'mencoba' memperbaiki sistem; kami dibayar untuk memastikan air berkualitas selalu tersedia bagi produksi Anda. Dengan dukungan teknologi monitoring 24/7, kami memikul beban operasional di pundak kami, sehingga tim ahli Anda bisa kembali fokus pada satu hal yang benar-benar meningkatkan laba: inovasi dan efisiensi produksi.</p>
+            </div>
+          </div>
+
+          <div class="pillar-band">
+            <div class="value-item">
+              <small>Certainty Pillar C — Future-Proof Infrastructure</small>
+              <h3 class="pillar-title">Jangan Biarkan Utilitas Menjadi “Gembok” Rencana Ekspansi Anda.</h3>
+              <p>Ambisi besar perusahaan tidak boleh terhenti di pintu keluar limbah. Banyak rencana ekspansi pabrik tertunda bukan karena pasar tidak ada, tetapi karena kapasitas pengolahan air dan utilitas tidak mampu mengejar penambahan lini produksi. Bersama Invila™, utilitas air berubah dari penghambat menjadi akselerator pertumbuhan. Sistem kami dirancang modular dan adaptif, siap ditingkatkan kapasitasnya seiring meningkatnya visi, output, dan target pasar perusahaan.</p>
+              <div class="pillar-list">
+                <div class="pillar-list-item">
+                  <small>Sistem Modular Tanpa Gangguan</small>
+                  <p>Penambahan kapasitas tidak harus membangun ulang dari nol. Sistem modular Invila™ memungkinkan peningkatan kapasitas tanpa mengganggu produksi eksisting.</p>
+                </div>
+                <div class="pillar-list-item">
+                  <small>Time-to-Market Lebih Cepat</small>
+                  <p>Dari rencana ekspansi hingga operasional, kami membantu memangkas waktu implementasi infrastruktur air agar target peluncuran kapasitas atau produk baru tidak tertahan oleh utilitas.</p>
+                </div>
+                <div class="pillar-list-item">
+                  <small>Compliance Resilience</small>
+                  <p>Standar lingkungan akan terus bergerak lebih ketat. Sistem Invila™ dirancang lebih siap menghadapi tuntutan baku mutu masa depan untuk membantu melindungi izin operasional Anda dalam jangka panjang.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <div class="pillar-band">
+            <div class="value-item">
+              <small>The Logic of Success</small>
+              <h3 class="pillar-title">Kegagalan Teknis Adalah Risiko Finansial Kami—Bukan Beban Anda.</h3>
+              <p>Mengapa kami begitu percaya diri berinvestasi di fasilitas Anda? Karena di Invila™, model bisnis kami dirancang agar kepentingan kami selaras dengan keberhasilan Anda. Melalui ekosistem SCADA-IoT yang memantau setiap parameter secara real-time, kami tidak menunggu sistem rusak untuk bertindak; kami memprediksi masalah sebelum tim produksi Anda menyadarinya. Kami mengelola aset kami di lokasi Anda dengan standar tertinggi, karena hanya dengan menjaga performa sistem itulah kami mendapatkan imbal balik investasi. Di sini, reliabilitas bukan lagi sekadar janji layanan, melainkan mekanisme pertahanan modal kami yang secara langsung mengamankan operasional Anda.</p>
+            </div>
           </div>
 
           <div class="solution-benefits">
@@ -1242,6 +1375,8 @@
             <p>Dengan pendekatan ini, perusahaan tidak lagi harus memilih antara kebutuhan upgrade sistem air dan tekanan investasi di awal. Invila™ membantu keduanya berjalan bersama secara lebih realistis.</p>
           </div>
 
+          
+
           <div class="solution-cta">
             <div>
               <small>Minta Skema yang Cocok untuk Fasilitas Anda</small>
@@ -1250,6 +1385,12 @@
             </div>
             <div>
               <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20meminta%20skema%20yang%20cocok%20untuk%20fasilitas%20kami." target="_blank" rel="noopener">Minta Skema yang Cocok untuk Fasilitas Anda</a>
+            </div>
+          </div>
+                  <div class="summary-lock-band">
+            <div class="summary-lock-content">
+              <p class="section-kicker" style="margin:0;">Section 4 Summary Lock</p>
+              <p class="summary-lock-copy">Transisi selesai, kedaulatan air Anda dimulai. Namun, jangan hanya percaya pada peta jalan kami—lihatlah hasil nyata yang telah kami amankan di garis depan produksi.</p>
             </div>
           </div>
         </div>
@@ -1280,40 +1421,38 @@
       <div class="wrap">
         <div class="section-head">
           <div>
-            <p class="section-kicker">How It Works</p>
-            <h2 class="section-title">Proses yang Transparan, Hasil yang Lebih Terukur</h2>
+            <p class="section-kicker">Protokol Implementasi Paralel</p>
+            <h2 class="section-title">Optimalisasi Infrastruktur Air yang Selaras dengan Kontinuitas Operasional.</h2>
           </div>
-          <p class="section-copy">Roadmap yang jelas untuk menghadirkan infrastruktur air yang lebih efisien, lebih andal, dan lebih realistis bagi bisnis Anda.</p>
+          <p class="section-copy">Skalabilitas bisnis tidak seharusnya terhambat oleh keterbatasan pengolahan limbah. Bersama Invila™, utilitas air bertransformasi dari kendala operasional menjadi akselerator pertumbuhan. Melalui sistem modular yang adaptif, kami memastikan infrastruktur Anda siap mendukung ekspansi kapasitas secara instan. Kami hadir untuk mengamankan masa depan operasional, memastikan utilitas air selalu selangkah di depan visi pertumbuhan Anda.</p>
         </div>
 
-        <div class="solution-shell">
+        <div class="flow-shell">
           <div class="solution-lead">
             <div class="solution-body">
-              <p>Setiap perusahaan memiliki tantangan yang berbeda. Karena itu, Invila™ memulai dari data nyata di lapangan agar solusi yang dihadirkan benar-benar selaras dengan kebutuhan operasional, target finansial, dan arah bisnis perusahaan Anda.</p>
-              <p>Alih-alih menawarkan pendekatan yang generik, Invila™ membawa proses yang lebih terstruktur untuk membantu perusahaan memahami kondisi existing system, memetakan potensi efisiensi, dan menyiapkan skema implementasi yang lebih siap dijalankan.</p>
+              <p>Efisiensi setiap detik di lini produksi adalah prioritas kami. Integrasi infrastruktur Invila™ dirancang berjalan secara paralel untuk memastikan operasional Anda tetap berjalan tanpa gangguan. Melalui protokol implementasi yang presisi, kami mengelola seluruh transisi mulai dari audit hingga aktivasi di balik layar. Fokus Anda tetap pada target produksi, sementara kami mengamankan keberlanjutan sistem Anda.</p>
             </div>
             <aside class="solution-summary">
-              <small>Implementation Roadmap</small>
-              <p>Dengan proses yang jelas sejak awal, perusahaan dapat mengambil keputusan dengan lebih percaya diri dan bergerak menuju infrastruktur air yang lebih efisien tanpa masuk ke jalur investasi yang berat di depan.</p>
+              <small>Alur Transformasi Operasional</small>
+              <p>Empat langkah strategis ini dirancang untuk membawa perusahaan dari mode reaktif menuju kedaulatan air yang lebih terukur, andal, dan siap menopang pertumbuhan.</p>
             </aside>
           </div>
 
           <div class="flow-grid">
-            <article class="flow-card"><small>Step 01</small><h3>Assessment Kondisi Aktual</h3><p>Kami memetakan kondisi sistem eksisting, kebutuhan air, tekanan biaya, serta titik-titik inefisiensi yang memengaruhi operasional dan profitabilitas perusahaan.</p></article>
-            <article class="flow-card"><small>Step 02</small><h3>Perancangan Solusi yang Tepat</h3><p>Berdasarkan hasil assessment, tim Invila™ menyiapkan rancangan infrastruktur air yang lebih andal, lebih modern, dan lebih relevan dengan kebutuhan nyata fasilitas Anda.</p></article>
-            <article class="flow-card"><small>Step 03</small><h3>Transparansi Nilai Ekonomi</h3><p>Kami memaparkan struktur nilai proyek secara terbuka agar perusahaan memiliki visibilitas yang jelas terhadap potensi efisiensi, dampak operasional, dan pendekatan investasi yang kami tanggung.</p></article>
-            <article class="flow-card"><small>Step 04</small><h3>Penetapan Skema Water-as-a-Service</h3><p>Skema kerja sama dirancang agar lebih selaras dengan kebutuhan bisnis perusahaan, tanpa membebani capex di awal dan tetap memberi kepastian implementasi yang lebih realistis.</p></article>
-            <article class="flow-card"><small>Step 05</small><h3>Implementasi &amp; Go-Live</h3><p>Setelah skema disepakati, infrastruktur air dijalankan dengan pendekatan yang terukur dan didukung monitoring berbasis SCADA-IoT untuk membantu visibility dan kontrol performa secara berkelanjutan.</p></article>
+            <article class="flow-card"><small>01. Strategic Value Audit</small><h3>Analysis &amp; Discovery</h3><p>Tanpa asumsi, tim ahli kami membedah karakteristik air limbah dan fluktuasi parameter untuk mengidentifikasi masalah utama. Kami mengevaluasi kebocoran biaya, efisiensi energi, dan aspek legalitas secara menyeluruh. Hasilnya, potensi penghematan nyata sudah kami petakan jauh sebelum tahap konstruksi dilakukan.</p></article>
+            <article class="flow-card"><small>02. Precision Engineering &amp; Blueprint</small><h3>Custom Design</h3><p>Berdasarkan hasil audit, kami merancang sistem modular yang disesuaikan khusus untuk parameter teknis dan target ekspansi pabrik Anda. Tidak ada solusi one-size-fits-all; setiap inci desain bertujuan untuk maksimalisasi output.</p></article>
+            <article class="flow-card"><small>03. Parallel Integration</small><h3>Execution with Zero Downtime</h3><p>Inilah kunci ketenangan Anda. Kami melakukan instalasi dan integrasi sistem secara paralel dengan sistem lama. Zero Production Downtime. Kami memastikan sistem Invila™ siap 100% dan teruji sebelum proses peralihan dilakukan.</p></article>
+            <article class="flow-card"><small>04. Intelligence Handover</small><h3>Live Control &amp; Savings</h3><p>Saat sistem aktif, Anda langsung memegang kendali penuh melalui Dashboard SCADA-IoT. Kami mengambil alih seluruh beban operasional, dan Anda mulai menikmati penghematan biaya serta kepastian suplai air sejak hari pertama.</p></article>
           </div>
 
           <div class="solution-cta">
             <div>
               <small>Jadwalkan Diskusi Awal untuk Fasilitas Anda</small>
               <h3>Ceritakan kondisi site Anda.</h3>
-              <p>Tim Invila™ akan membantu memetakan langkah awal yang paling relevan untuk kebutuhan operasional dan target bisnis Anda.</p>
+              <p>Tim Invila™ akan membantu memetakan langkah awal yang paling relevan untuk kebutuhan operasional, target ekspansi, dan kesiapan infrastruktur air fasilitas Anda.</p>
             </div>
             <div>
-              <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20menjadwalkan%20diskusi%20awal%20untuk%20fasilitas%20kami." target="_blank" rel="noopener">Jadwalkan Diskusi Awal untuk Fasilitas Anda</a>
+              <a class="btn btn-primary" href="https://wa.me/6285219493322?text=Halo%20Irfon%20Desman%2C%20saya%20ingin%20membahas%20protokol%20implementasi%20untuk%20fasilitas%20kami." target="_blank" rel="noopener">Jadwalkan Diskusi Awal untuk Fasilitas Anda</a>
             </div>
           </div>
         </div>
